@@ -1,0 +1,75 @@
+--- !ruby/object:Gem::Specification 
+name: newsletter_boy
+version: !ruby/object:Gem::Version 
+  hash: 23
+  prerelease: false
+  segments: 
+  - 1
+  - 0
+  - 0
+  version: 1.0.0
+platform: ruby
+authors: 
+- Digineo GmbH
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-09-14 00:00:00 +02:00
+default_executable: 
+dependencies: []
+
+description: NewsletterBoy Api
+email: kontakt@digineo.de
+executables: []
+
+extensions: []
+
+extra_rdoc_files: []
+
+files: 
+- lib/tasks/newsletter_boy.rake
+- lib/newsletter_boy.rb
+- test/test_helper.rb
+- test/newsletter_boy_test.rb
+- Rakefile
+- MIT-LICENSE
+- README
+- init.rb
+has_rdoc: true
+homepage: http://digineo.de
+licenses: []
+
+post_install_message: 
+rdoc_options: []
+
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: NewsletterBoy Api
+test_files: []
+
+

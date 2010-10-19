@@ -9,9 +9,15 @@ module NewsletterBoy
   self.host = 'www.newsletterboy.de'
 
   class Base < ActiveResource::Base
+    self.format = :json
   end
 
   class Recipient < Base
+  end
+
+  class Delivery < Base
+    #self.site = "#{Base.site}api_mailings/:api_mailing_id"
+    self.prefix = "/api_mailings/:api_mailing_id/"
   end
 
   def self.credentials=(credentials)
@@ -27,6 +33,12 @@ module NewsletterBoy
       end
     end
     rec.approved = true
+    rec.save
+    rec
+  end
+
+  def self.deliver(api_mailing_id, params)
+    rec = Delivery.new params.merge(:api_mailing_id => api_mailing_id)
     rec.save
     rec
   end
