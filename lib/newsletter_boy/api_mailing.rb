@@ -21,6 +21,15 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
     @hash[ :api_mailing_id ] = identifier
   end
 
+  def group_variables
+    @vars = {}
+    variables.each do |var|
+      methods = var.match(/^(\w+)\..+/)
+      @vars[methods[1]] ||= []
+      @vars[methods[1]] << var
+    end
+  end
+
   def handle_options
     # handle options
     @options.each do |name, object|
@@ -35,15 +44,6 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
         # do magic stuff
         @hash.merge!(options_to_hash(name))
       end
-    end
-  end
-
-  def group_variables
-    @vars = {}
-    variables.each do |var|
-      methods = var.match(/^(\w+)\..+/)
-      @vars[methods[1]] ||= []
-      @vars[methods[1]] << var
     end
   end
 
@@ -84,6 +84,11 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
 
       # methoden aufruf (letztes element in der kette)
       when method_call
+        if object_context.class.respond_to? :is_whitelisted?
+          raise SecurityError, "method #{method_call} in class #{object_context.class} not whitelisted" unless object_context.class.is_whitelisted?(method)
+        else
+          warn "no whitelist in class #{object_context.class}"
+        end
         context[method] = object_context.send(method)
       # zwischenaufruf 
       else
