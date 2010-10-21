@@ -46,9 +46,8 @@ module NewsletterBoy
   def self.load_api_mailing_or_fail_loud *args
     identifier = args[0]
     api_mailing = ApiMailing.find(identifier)
-    object = args[1]
-    api_mailing.object = object
-    api_mailing.recipient = args.last[:recipient]
+    options = args[1]
+    api_mailing.options = options
     return api_mailing
   end
 

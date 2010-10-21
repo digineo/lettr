@@ -1,39 +1,87 @@
 class NewsletterBoy::ApiMailing < NewsletterBoy::Base
-  attr_writer :object, :recipient
+  attr_writer :options
 
   def deliver
-    rec = NewsletterBoy::Delivery.new object_to_hash.merge(:recipient => @recipient, :api_mailing_id => identifier)
+    fail ArgumentError, 'Empfänger nicht übergeben' unless @options.has_key?(:recipient)
+    build_initial_delivery_hash
+    @options.stringify_keys!
+    group_variables
+    handle_options
+
+    # perform delivery request
+    p @hash
+    rec = NewsletterBoy::Delivery.new @hash
     rec.save
     rec
   end
 
-  def object_to_hash
-    hash = {}
-    @collections = {}
-    variables.each do |var|
-      methods = var.split('.')
-      if is_collection_variable?(methods.first)
-        handle_collection_variable(methods.first, var)
+  def build_initial_delivery_hash
+    @hash = {}
+    @hash[ :recipient ] = @options.delete(:recipient)
+    @hash[ :api_mailing_id ] = identifier
+  end
+
+  def handle_options
+    # handle options
+    @options.each do |name, object|
+      case
+      when object.is_a?( Hash )
+        # variablen als @hash übergeben
+        @hash.merge!( name => object )
+      when object.respond_to?( :to_nb_hash )
+        # object liefert variablen
+        @hash.merge!( name => object.to_nb_hash)
       else
-        handle_methods(methods, hash)
+        # do magic stuff
+        @hash.merge!(options_to_hash(name))
       end
     end
+  end
+
+  def group_variables
+    @vars = {}
+    variables.each do |var|
+      methods = var.match(/^(\w+)\..+/)
+      @vars[methods[1]] ||= []
+      @vars[methods[1]] << var
+    end
+  end
+
+  def options_to_hash name
+    hash = {}
+    @collections = {}
+    @vars[name.to_s].each do |var|
+      methods = var.split('.')
+      #if is_collection_variable?(methods.first)
+        #handle_collection_variable(methods.first, var)
+      #else
+        handle_methods(methods, hash)
+      #end
+    end
     evaluate_collections
-    p hash
     hash
   end
 
   def handle_methods methods, hash
     method_call = methods.last
     context = hash
-    object_context = @object
+    object_context = @options
     methods.each_with_index do |method, index|
+      #object_context = @options[method] if index == 0
       case method
       # collection variable
       when /(\w+)\[([\w\.]+)\]/
         collection_name = $1
         variable_name = $2
-        handle_new_collection context, object_context, collection_name, variable_name
+        if method == method_call
+          handle_new_collection context, object_context, collection_name, variable_name
+        else
+          if is_collection_variable? methods[index+1]
+            handle_collection_variable( methods[index+1], methods.join('.') )
+            break
+          end
+        end
+
       # methoden aufruf (letztes element in der kette)
       when method_call
         context[method] = object_context.send(method)
@@ -41,7 +89,7 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
       else
         context[method] = {} unless context[method]
         context = context[method]
-        object_context = object_context.send(method) unless index == 0
+        object_context = index == 0 ? object_context[method] : object_context.send(method)
       end
     end
   end
@@ -49,7 +97,7 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
   def handle_new_collection context, object_context, collection_name, variable_name
     collection = object_context.send(collection_name)
     context[collection_name] = []
-    @collections[variable_name] = Collection.new collection, context[collection_name]
+    @collections[variable_name] = NewsletterBoy::Collection.new collection, context[collection_name]
   end
 
   def evaluate_collections
