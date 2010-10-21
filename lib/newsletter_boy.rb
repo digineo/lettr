@@ -15,36 +15,6 @@ module NewsletterBoy
   class Recipient < Base
   end
 
-  class ApiMailing < Base
-    attr_writer :object, :recipient
-
-    def deliver
-      rec = Delivery.new object_to_hash.merge(:recipient => @recipient, :api_mailing_id => identifier)
-      rec.save
-      rec
-    end
-
-    def object_to_hash
-      hash = {}
-      variables.each do |var|
-        methods = var.split('.')
-        method_call = methods.last
-        context = hash
-        object_context = @object
-        methods.each_with_index do |method, index|
-          unless method == method_call
-            context[method] = {} unless context[method]
-            context = context[method]
-            object_context = object_context.send(method) unless index == 0
-          else
-            context[method] = object_context.send(method)
-          end
-        end
-      end
-      hash
-    end
-  end
-
   class Delivery < Base
     self.prefix = "/api_mailings/:api_mailing_id/"
   end
@@ -68,16 +38,18 @@ module NewsletterBoy
 
 
   def self.method_missing *args, &block
-    p args
+    load_api_mailing_or_fail_loud *args
+  rescue ActiveResource::ResourceNotFound
+    super
+  end
+
+  def self.load_api_mailing_or_fail_loud *args
     identifier = args[0]
     api_mailing = ApiMailing.find(identifier)
-    p api_mailing
     object = args[1]
     api_mailing.object = object
     api_mailing.recipient = args.last[:recipient]
     return api_mailing
-  rescue ActiveResource::ResourceNotFound
-    super
   end
 
 end
