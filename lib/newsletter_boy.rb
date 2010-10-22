@@ -54,8 +54,6 @@ module NewsletterBoy
   end
 
   def self.api_mailings
-    p 'cached'
-    p @@api_mailings
     @@api_mailings
   end
 

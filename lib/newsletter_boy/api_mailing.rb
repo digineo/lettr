@@ -24,14 +24,8 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
     append_used_variables
 
     # perform delivery request
-    p @hash
     rec = NewsletterBoy::Delivery.new @hash
     rec
-  end
-
-  def self.find *args
-    p 'load'
-    super
   end
 
   def append_used_variables
