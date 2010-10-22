@@ -3,10 +3,12 @@ module NewsletterBoy
   mattr_accessor :host
   mattr_accessor :attributes
   mattr_accessor :protocol
+  mattr_accessor :api_mailings
 
   self.attributes = %w{ gender firstname lastname street ccode pcode city }
   self.protocol = 'https'
   self.host = 'www.newsletterboy.de'
+  self.api_mailings = {}
 
   class Base < ActiveResource::Base
     self.format = :json
@@ -45,10 +47,16 @@ module NewsletterBoy
 
   def self.load_api_mailing_or_fail_loud *args
     identifier = args[0]
-    api_mailing = ApiMailing.find(identifier)
+    api_mailing = self.api_mailings[identifier] ||= ApiMailing.find(identifier)
     options = args[1]
     api_mailing.options = options
     return api_mailing
+  end
+
+  def self.api_mailings
+    p 'cached'
+    p @@api_mailings
+    @@api_mailings
   end
 
 end

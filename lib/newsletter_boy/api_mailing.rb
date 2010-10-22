@@ -3,16 +3,39 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
 
   def deliver
     fail ArgumentError, 'Empfänger nicht übergeben' unless @options.has_key?(:recipient)
+    rec = build_delivery_record
+    begin
+      rec.save
+    rescue ActiveResource::MethodNotAllowed => e
+      old_recipient = @hash[:recipient]
+      self.id = identifier
+      self.reload
+      @options[:recipient] = old_recipient
+      rec = build_delivery_record
+      rec.save
+    end
+  end
+
+  def build_delivery_record
     build_initial_delivery_hash
     @options.stringify_keys!
     group_variables
     handle_options
+    append_used_variables
 
     # perform delivery request
     p @hash
     rec = NewsletterBoy::Delivery.new @hash
-    rec.save
     rec
+  end
+
+  def self.find *args
+    p 'load'
+    super
+  end
+
+  def append_used_variables
+    @hash.merge! :variables => variables
   end
 
   def build_initial_delivery_hash
@@ -53,9 +76,9 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
     @vars[name.to_s].each do |var|
       methods = var.split('.')
       #if is_collection_variable?(methods.first)
-        #handle_collection_variable(methods.first, var)
+      #handle_collection_variable(methods.first, var)
       #else
-        handle_methods(methods, hash)
+      handle_methods(methods, hash)
       #end
     end
     evaluate_collections
@@ -69,7 +92,7 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
     methods.each_with_index do |method, index|
       #object_context = @options[method] if index == 0
       case method
-      # collection variable
+        # collection variable
       when /(\w+)\[([\w\.]+)\]/
         collection_name = $1
         variable_name = $2
@@ -82,7 +105,7 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
           end
         end
 
-      # methoden aufruf (letztes element in der kette)
+        # methoden aufruf (letztes element in der kette)
       when method_call
         if object_context.class.respond_to? :is_whitelisted?
           raise SecurityError, "method #{method_call} in class #{object_context.class} not whitelisted" unless object_context.class.is_whitelisted?(method)
@@ -90,7 +113,7 @@ class NewsletterBoy::ApiMailing < NewsletterBoy::Base
           warn "no whitelist in class #{object_context.class}"
         end
         context[method] = object_context.send(method)
-      # zwischenaufruf 
+        # zwischenaufruf 
       else
         context[method] = {} unless context[method]
         context = context[method]
