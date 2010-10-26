@@ -5,11 +5,7 @@ module NewsletterBoy::ObjectConverter
     @collections = {}
     @vars[name.to_s].each do |var|
       methods = var.split('.')
-      #if is_collection_variable?(methods.first)
-      #handle_collection_variable(methods.first, var)
-      #else
       handle_methods(methods, hash)
-      #end
     end
     evaluate_collections
     hash
@@ -18,9 +14,8 @@ module NewsletterBoy::ObjectConverter
   def handle_methods methods, hash
     method_call = methods.last
     context = hash
-    object_context = @options
+    object_context = @delivery_options
     methods.each_with_index do |method, index|
-      #object_context = @options[method] if index == 0
       case method
         # collection variable
       when /(\w+)\[([\w\.]+)\]/
@@ -43,7 +38,7 @@ module NewsletterBoy::ObjectConverter
           warn "no whitelist in class #{object_context.class}"
         end
         context[method] = object_context.send(method)
-        # zwischenaufruf 
+        # zwischenaufruf
       else
         context[method] = {} unless context[method]
         context = context[method]

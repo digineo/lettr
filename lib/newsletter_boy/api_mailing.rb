@@ -1,10 +1,11 @@
 NewsletterBoy::ApiMailing = Struct.new(:identifier, :subject, :variables) do
   include NewsletterBoy::Resource
   include NewsletterBoy::ObjectConverter
-
-  attr_writer :options
+  include NewsletterBoy::Deliverable
 
   self.path = 'api_mailings'
+
+  attr_writer :delivery_options
 
   def initialize attributes={}
     attributes['api_mailing'].each do |key, value|
@@ -12,46 +13,18 @@ NewsletterBoy::ApiMailing = Struct.new(:identifier, :subject, :variables) do
     end
   end
 
-  def deliver
-    fail ArgumentError, 'Empfänger nicht übergeben' unless @options.has_key?(:recipient)
-    rec = build_delivery_record
-    rec.save
-    if rec.errors.any?
-      # invalidate cache and retry
-      old_recipient = @hash[:recipient]
-      reload
-      @options[:recipient] = old_recipient
-      rec = build_delivery_record
-      rec.save
-    end
-    rec
+  def delivery_options= options
+    @recipient = options.delete(:recipient)
+    @delivery_options = options
+    @delivery_options.stringify_keys!
   end
 
   def reload
     self.send(:initialize, 'api_mailing' => self.class.find(identifier).attributes)
   end
 
-  def build_delivery_record
-    build_initial_delivery_hash
-    @options.stringify_keys!
-    group_variables
-    handle_options
-    append_used_variables
-
-    # perform delivery request
-    rec = NewsletterBoy::Delivery.new @hash, @files
-    rec
-  end
-
   def append_used_variables
     @hash.merge! :variables => variables
-  end
-
-  def build_initial_delivery_hash
-    @hash = {}
-    @files = {}
-    @hash[ :recipient ] = @options.delete(:recipient)
-    @hash[ :api_mailing_id ] = identifier
   end
 
   def group_variables
@@ -65,7 +38,7 @@ NewsletterBoy::ApiMailing = Struct.new(:identifier, :subject, :variables) do
 
   def handle_options
     # handle options
-    @options.each do |name, object|
+    @delivery_options.each do |name, object|
       case
       when object.is_a?( Hash )
         # variablen als @hash übergeben

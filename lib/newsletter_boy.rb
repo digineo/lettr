@@ -28,9 +28,9 @@ module NewsletterBoy
     rec
   end
 
-
   def self.method_missing *args, &block
-    load_api_mailing_or_fail_loud *args
+    return super if args[0].to_s =~ /^(_create|_options)/
+      load_api_mailing_or_fail_loud *args
   rescue RestClient::ResourceNotFound
     super
   end
@@ -39,8 +39,24 @@ module NewsletterBoy
     identifier = args[0]
     api_mailing = self.api_mailings[identifier] ||= ApiMailing.find(identifier)
     options = args[1]
-    api_mailing.options = options
+    api_mailing.delivery_options = options
     return api_mailing
+  rescue RestClient::ResourceNotFound => e
+    if _options_for_rendered_mail? args[1]
+      _create_rendered_mail( *args )
+    else
+      raise e
+    end
+  end
+
+  def self._options_for_rendered_mail? options
+    options.has_key?( :subject ) &&
+      options.has_key?( :recipient ) &&
+      ( options.has_key?( :text ) || options.has_key?( :html ))
+  end
+
+  def self._create_rendered_mail *args
+    RenderedMailing.new args[1].merge(:identifier => args[0].to_s)
   end
 
   def self.api_mailings
