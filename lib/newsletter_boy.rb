@@ -10,24 +10,14 @@ module NewsletterBoy
   self.host = 'www.newsletterboy.de'
   self.api_mailings = {}
 
-  class Base < ActiveResource::Base
-    self.format = :json
-  end
-
-  class Recipient < Base
-  end
-
-  class Delivery < Base
-    self.prefix = "/api_mailings/:api_mailing_id/"
-  end
-
   def self.credentials=(credentials)
-    Base.site = "#{protocol}://#{credentials[:user]}:#{credentials[:pass]}@#{host}/"
+    Base.user = credentials[:user]
+    Base.pass = credentials[:pass]
   end
 
   def self.sign_up(recipient)
     raise 'Object muss über das Attribut :email verfügen.' unless recipient.respond_to? :email
-    rec = Recipient.new :email => recipient.email
+    rec = Recipient.new recipient.email
     attributes.each do |attribute|
       if recipient.respond_to? attribute
         rec.send("#{attribute}=", recipient.send(attribute))
@@ -41,7 +31,7 @@ module NewsletterBoy
 
   def self.method_missing *args, &block
     load_api_mailing_or_fail_loud *args
-  rescue ActiveResource::ResourceNotFound
+  rescue RestClient::ResourceNotFound
     super
   end
 
