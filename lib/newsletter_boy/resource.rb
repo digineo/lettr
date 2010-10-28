@@ -3,6 +3,8 @@ module NewsletterBoy::Resource
   def self.included base
     base.extend ClassMethods
     base.cattr_accessor :path
+    base.send(:attr_accessor, :errors)
+    base.send(:attr_accessor, :id)
   end
 
   module ClassMethods
@@ -19,11 +21,17 @@ module NewsletterBoy::Resource
     end
   end
 
+  def initialize *args
+    @errors = []
+  end
+
   def save
     res = client.save self
     self.id = ActiveSupport::JSON.decode(res)[resource_name]['id'] unless res.blank?
+    true
   rescue RestClient::UnprocessableEntity => e
-    self.errors = ActiveSupport::JSON.decode(e.response)['errors']
+    self.errors = ActiveSupport::JSON.decode(e.response)
+    false
   end
 
   def client

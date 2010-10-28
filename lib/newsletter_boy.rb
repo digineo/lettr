@@ -24,15 +24,10 @@ module NewsletterBoy
       end
     end
     rec.approved = true
-    rec.save
+    unless rec.save
+      raise rec.errors.join(' ')
+    end
     rec
-  end
-
-  def self.method_missing *args, &block
-    return super if args[0].to_s =~ /^(_create|_options)/
-      load_api_mailing_or_fail_loud *args
-  rescue RestClient::ResourceNotFound
-    super
   end
 
   def self.load_api_mailing_or_fail_loud *args
@@ -42,25 +37,33 @@ module NewsletterBoy
     api_mailing.delivery_options = options
     return api_mailing
   rescue RestClient::ResourceNotFound => e
-    if _options_for_rendered_mail? args[1]
-      _create_rendered_mail( *args )
-    else
-      raise e
-    end
+    _create_rendered_mail( *args )
   end
 
-  def self._options_for_rendered_mail? options
-    options.has_key?( :subject ) &&
-      options.has_key?( :recipient ) &&
-      ( options.has_key?( :text ) || options.has_key?( :html ))
+  def self._check_options_for_rendered_mail! options
+    [:subject, :recipient].each do |opt|
+      raise ArgumentError.new ":#{opt} is required" unless options.has_key?( opt )
+    end
+    raise ArgumentError.new ":html or :text is required" unless (options.has_key?( :text ) || options.has_key?( :html ))
   end
 
   def self._create_rendered_mail *args
-    RenderedMailing.new args[1].merge(:identifier => args[0].to_s)
+    _check_options_for_rendered_mail! args[1]
+    mailing = RenderedMailing.new args[1].merge(:identifier => args[0].to_s)
+    unless mailing.save
+      raise ArgumentError.new mailing.errors.join(' ')
+    end
+    mailing
   end
 
   def self.api_mailings
     @@api_mailings
+  end
+
+  def self.method_missing *args, &block
+    load_api_mailing_or_fail_loud *args
+  rescue RestClient::ResourceNotFound
+    super
   end
 
 end

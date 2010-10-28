@@ -13,13 +13,15 @@ class NewsletterBoy::Base
   end
 
   def save object
-    path = object.path
+    path = object.collection_path
     payload = object.to_payload
     payload.merge! :files => object.files if object.respond_to?(:files) && object.files
     client[path].post(payload, DEFAULT_HEADERS)
   end
 
   def destroy object
+    p object
+    p object.path
     client[object.path].delete DEFAULT_HEADERS
   end
 
