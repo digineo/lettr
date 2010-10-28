@@ -19,8 +19,6 @@ NewsletterBoy::RenderedMailing = Struct.new(:identifier, :subject, :html, :text,
         @hash.merge! key => value
       end
     end
-    p @hash
-    p @files
   end
 
   def to_payload

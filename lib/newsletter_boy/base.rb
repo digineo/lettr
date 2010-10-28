@@ -20,13 +20,15 @@ class NewsletterBoy::Base
   end
 
   def destroy object
-    p object
-    p object.path
     client[object.path].delete DEFAULT_HEADERS
   end
 
   def find path
     ActiveSupport::JSON.decode(client[path].get DEFAULT_HEADERS)
+  end
+
+  def [] path
+    client[path]
   end
 
 end

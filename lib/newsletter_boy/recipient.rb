@@ -15,4 +15,8 @@ NewsletterBoy::Recipient = Struct.new( :email, :id, :gender, :firstname, :lastna
     self.class.path
   end
 
+  def self.delete_by_email email
+    client["#{path}/destroy_by_email"].delete :email => email
+  end
+
 end

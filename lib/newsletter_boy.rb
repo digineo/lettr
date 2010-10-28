@@ -15,7 +15,7 @@ module NewsletterBoy
     Base.pass = credentials[:pass]
   end
 
-  def self.sign_up(recipient)
+  def self.subscribe(recipient)
     raise 'Object muss über das Attribut :email verfügen.' unless recipient.respond_to? :email
     rec = Recipient.new recipient.email
     attributes.each do |attribute|
@@ -28,6 +28,10 @@ module NewsletterBoy
       raise rec.errors.join(' ')
     end
     rec
+  end
+
+  def self.unsubscribe(email)
+    Recipient.delete_by_email(email)
   end
 
   def self.load_api_mailing_or_fail_loud *args
