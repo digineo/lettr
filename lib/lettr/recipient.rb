@@ -1,5 +1,5 @@
-NewsletterBoy::Recipient = Struct.new( :email, :id, :gender, :firstname, :lastname, :street, :ccode, :pcode, :city, :approved ) do
-  include NewsletterBoy::Resource
+Lettr::Recipient = Struct.new( :email, :id, :gender, :firstname, :lastname, :street, :ccode, :pcode, :city, :approved ) do
+  include Lettr::Resource
   self.path = 'recipients'
 
   def initialize email

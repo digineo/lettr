@@ -1,4 +1,4 @@
-module NewsletterBoy::Whitelist
+module Lettr::Whitelist
 
   def self.extended model
     model.class_inheritable_accessor :nb_whitelist

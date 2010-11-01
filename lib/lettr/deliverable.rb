@@ -1,4 +1,4 @@
-module NewsletterBoy::Deliverable
+module Lettr::Deliverable
 
   def self.included base
     base.class_eval do
@@ -32,7 +32,7 @@ module NewsletterBoy::Deliverable
     append_used_variables if respond_to? :append_used_variables
 
     # perform delivery request
-    rec = NewsletterBoy::Delivery.new @hash, @files
+    rec = Lettr::Delivery.new @hash, @files
     rec
   end
 

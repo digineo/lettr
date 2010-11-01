@@ -1,4 +1,4 @@
-class NewsletterBoy::Collection
+class Lettr::Collection
   def initialize collection, context
     @collection = collection
     @vars = []
@@ -22,4 +22,5 @@ class NewsletterBoy::Collection
 
   end
 end
+
 

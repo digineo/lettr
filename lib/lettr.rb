@@ -1,13 +1,13 @@
-module NewsletterBoy
+module Lettr
 
   mattr_accessor :host
   mattr_accessor :attributes
   mattr_accessor :protocol
   mattr_accessor :api_mailings
 
-  self.attributes = %w{ gender firstname lastname street ccode pcode city }
-  self.protocol = 'https'
-  self.host = 'www.newsletterboy.de'
+  self.attributes ||= %w{ gender firstname lastname street ccode pcode city }
+  self.protocol ||= 'https'
+  self.host ||= 'www.newsletterboy.de'
   self.api_mailings = {}
 
   def self.credentials=(credentials)
@@ -53,6 +53,10 @@ module NewsletterBoy
 
   def self._create_rendered_mail *args
     _check_options_for_rendered_mail! args[1]
+    mailing = RenderedMailing.find args[0].to_s
+    mailing.attributes = args[1].merge(:identifier => args[0].to_s)
+    mailing
+  rescue RestClient::ResourceNotFound
     mailing = RenderedMailing.new args[1].merge(:identifier => args[0].to_s)
     unless mailing.save
       raise ArgumentError.new mailing.errors.join(' ')

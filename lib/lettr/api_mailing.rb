@@ -1,7 +1,7 @@
-NewsletterBoy::ApiMailing = Struct.new(:identifier, :subject, :variables) do
-  include NewsletterBoy::Resource
-  include NewsletterBoy::ObjectConverter
-  include NewsletterBoy::Deliverable
+Lettr::ApiMailing = Struct.new(:identifier, :subject, :variables) do
+  include Lettr::Resource
+  include Lettr::ObjectConverter
+  include Lettr::Deliverable
 
   self.path = 'api_mailings'
 

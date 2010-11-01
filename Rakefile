@@ -16,7 +16,7 @@ end
 desc 'Generate documentation for the newsletter_boy plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'NewsletterBoy'
+  rdoc.title    = 'Lettr'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')

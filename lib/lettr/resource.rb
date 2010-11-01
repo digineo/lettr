@@ -1,4 +1,4 @@
-module NewsletterBoy::Resource
+module Lettr::Resource
 
   def self.included base
     base.extend ClassMethods
@@ -13,7 +13,7 @@ module NewsletterBoy::Resource
     end
 
     def client
-      @client ||= NewsletterBoy::Base.new
+      @client ||= Lettr::Base.new
     end
 
     def resource_path id

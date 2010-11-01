@@ -1,11 +1,27 @@
-NewsletterBoy::RenderedMailing = Struct.new(:identifier, :subject, :html, :text, :files) do
-  include NewsletterBoy::Resource
-  include NewsletterBoy::Deliverable
+Lettr::RenderedMailing = Struct.new(:identifier, :subject, :html, :text, :files) do
+  include Lettr::Resource
+  include Lettr::Deliverable
 
   self.path = 'rendered_mailings'
 
+  attr_writer :created_at
+  attr_accessor :recipient
+
   def initialize attributes={}
     super
+    if as = attributes.delete('rendered_mailing')
+      as.each do |k, v|
+        if %w{ identifier subject html text files }.include? k
+          send("#{k}=", v)
+        end
+      end
+    end
+    attributes.each do |key, value|
+      send("#{key}=", value)
+    end
+  end
+
+  def attributes= attributes
     attributes.each do |key, value|
       send("#{key}=", value)
     end

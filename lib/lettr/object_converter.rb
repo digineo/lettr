@@ -1,4 +1,4 @@
-module NewsletterBoy::ObjectConverter
+module Lettr::ObjectConverter
 
   def options_to_hash name
     hash = {}
@@ -50,7 +50,7 @@ module NewsletterBoy::ObjectConverter
   def handle_new_collection context, object_context, collection_name, variable_name
     collection = object_context.send(collection_name)
     context[collection_name] = []
-    @collections[variable_name] = NewsletterBoy::Collection.new collection, context[collection_name]
+    @collections[variable_name] = Lettr::Collection.new collection, context[collection_name]
   end
 
   def evaluate_collections

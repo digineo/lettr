@@ -1,4 +1,4 @@
-class NewsletterBoy::Base
+class Lettr::Base
   DEFAULT_HEADERS = { :accept => :json }
 
   cattr_accessor :site, :user, :pass, :content_type
@@ -9,7 +9,7 @@ class NewsletterBoy::Base
   end
 
   def self.site_url
-    "#{NewsletterBoy.protocol}://#{NewsletterBoy.host}/"
+    "#{Lettr.protocol}://#{Lettr.host}/"
   end
 
   def save object

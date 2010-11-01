@@ -1,5 +1,5 @@
-class NewsletterBoy::Delivery
-  include NewsletterBoy::Resource
+class Lettr::Delivery
+  include Lettr::Resource
   attr_reader :files
 
   def initialize a_hash, files
