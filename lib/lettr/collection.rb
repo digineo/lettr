@@ -14,7 +14,9 @@ class Lettr::Collection
       hash = {}
       @vars.each do |var|
         var = var.split('.').last
-        raise SecurityError, "method #{var} in class #{element.class} not whitelisted" unless element.class.is_whitelisted?(var)
+        if element.class.respond_to? :is_whitelisted?
+          raise SecurityError, "method #{var} in class #{element.class} not whitelisted" unless element.class.is_whitelisted?(var)
+        end
         hash[var] = element.send(var)
       end
       @context << hash

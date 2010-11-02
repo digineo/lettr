@@ -1,17 +1,17 @@
 module Lettr::Whitelist
 
   def self.extended model
-    model.class_inheritable_accessor :nb_whitelist
-    model.nb_whitelist ||= []
+    model.class_inheritable_accessor :lettr_whitelist
+    model.lettr_whitelist ||= []
   end
 
   # fügt methoden zur whitelist hinzu
   # nb_white_list :number, :test, :name
-  def nb_white_list *args
-    self.nb_whitelist = args.map(&:to_s)
+  def lettr_white_list *args
+    self.lettr_whitelist = args.map(&:to_s)
   end
 
   def is_whitelisted? method
-    nb_whitelist.include? method.to_s
+    lettr_whitelist.include? method.to_s
   end
 end

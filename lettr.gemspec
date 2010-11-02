@@ -9,4 +9,9 @@ Gem::Specification.new do |s|
 
   s.files        = Dir["{lib,test}/**/*"] + Dir["[A-Z]*"] + ["init.rb"]
   s.require_path = "lib"
+
+  s.add_dependency('rest-client', '>=1.6.1')
+  s.add_development_dependency('rspec', '<2.0')
+  s.add_development_dependency('webmock')
+  s.add_development_dependency('vcr')
 end

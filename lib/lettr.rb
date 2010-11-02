@@ -1,4 +1,17 @@
+require 'active_support'
+
 module Lettr
+
+  require 'lettr/base'
+  require 'lettr/resource'
+  require 'lettr/recipient'
+  require 'lettr/deliverable'
+  require 'lettr/object_converter'
+  require 'lettr/api_mailing'
+  require 'lettr/delivery'
+  require 'lettr/collection'
+  require 'lettr/rendered_mailing'
+  require 'lettr/whitelist'
 
   mattr_accessor :host
   mattr_accessor :attributes
