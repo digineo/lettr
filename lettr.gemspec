@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name        = "lettr"
-  s.version     = "1.0.0"
+  s.version     = "1.0.1"
   s.author      = "Digineo GmbH"
   s.email       = "kontakt@digineo.de"
-  s.homepage    = "http://digineo.de"
-  s.summary     = "NewsletterBoy Api"
-  s.description = "NewsletterBoy Api"
+  s.homepage    = "http://github.com/digineo/lettr"
+  s.summary     = "lettr.de Api"
+  s.description = "lettr.de Api"
 
   s.files        = Dir["{lib,test}/**/*"] + Dir["[A-Z]*"] + ["init.rb"]
   s.require_path = "lib"
