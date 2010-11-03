@@ -27,3 +27,16 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+desc 'Generate HTML Readme'
+task :readme do
+  begin
+    require 'rdiscount'
+    markdown = RDiscount.new(File.read('README.md'))
+    File.open('readme.html', 'w') do |f|
+      f.write markdown.to_html
+    end
+  rescue LoadError
+    'You need eht RDiscount gem'
+  end
+end
