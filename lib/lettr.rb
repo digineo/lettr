@@ -19,7 +19,7 @@ module Lettr
   mattr_accessor :api_mailings
 
   self.attributes ||= %w{ gender firstname lastname street ccode pcode city }
-  self.protocol ||= 'https'
+  self.protocol ||= 'http'
   self.host ||= 'www.newsletterboy.de'
   self.api_mailings = {}
 
