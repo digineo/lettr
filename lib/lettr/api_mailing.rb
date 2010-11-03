@@ -47,6 +47,9 @@ Lettr::ApiMailing = Struct.new(:identifier, :subject, :variables) do
         # object liefert variablen
         @hash.merge!( name => object.to_nb_hash)
       when object.is_a?( String )
+        if name.to_s == 'text' || name.to_s == 'html'
+          raise ArgumentError.new 'You cannot use Delivery Method, Lettr::Mailer or Manual Mailing with existing identifiers.'
+        end
         @files.merge!( name => File.new(object, 'rb'))
       else
         # do magic stuff
