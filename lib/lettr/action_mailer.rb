@@ -8,9 +8,6 @@ module Lettr::ActionMailer
       lettr_request_hash = {}
       lettr_request_hash[:recipient] = recipient
       lettr_request_hash[:subject] = mail.subject
-      p mail.encoded
-      p mail.body
-      p mail.parts
       if mail.parts.empty?
         case mail.content_type
         when 'text/html'
@@ -35,8 +32,6 @@ module Lettr::ActionMailer
     end
     identifier = @template
     lettr_request_hashes.each do |lettr_request_hash|
-      p 'identifier: ', identifier
-      p lettr_request_hash
       Lettr.send(identifier, lettr_request_hash).deliver
     end
 
