@@ -45,13 +45,13 @@ Just set the Delivery Method of ActionMailer to :lettr, and all Mailings from Ac
 ### Lettr::Mailer
 Let your mailer class inherit from Lettr::Mailer instead of ActionMailer::Base.
 
-    class BookingMailer < Lettr::Mailer
-      FROM = 'intervillas <info@intervillas-florida.com>'
-      def submission_mail(booking)
-        recipients booking.email
+    class ExampleMailer < Lettr::Mailer
+      FROM = 'example <info@example.com>'
+      def example_mail(example)
+        recipients example.email
         from FROM
-        subject I18n.t('booking_mailer.ihre_anfrage')
-        body :booking => booking
+        subject I18n.t('example_mailer.example')
+        body :example => example
       end
     end
 
@@ -66,7 +66,7 @@ Let your mailer class inherit from Lettr::Mailer instead of ActionMailer::Base.
 #### and a hash
 Provide a hash containing the variables, that you used in your template.
 
-    Lettr.test_mail(:test => { :variable_1 => 'foo', :variable_2 => 'bar' }).deliver
+    Lettr.test_mail(:recipient => 'tg@digineo.de', :test => { :variable_1 => 'foo', :variable_2 => 'bar' }).deliver
 
 #### OR
 #### and an object, which responds to :to_nb_hash
@@ -79,7 +79,7 @@ Provide a hash containing the variables, that you used in your template.
 
     test_object = TestClass.new
 
-    Lettr.test_mail(:test => test_object ).deliver
+    Lettr.test_mail(:recipient => 'tg@digineo.de', :test => test_object).deliver
 
 #### OR
 #### automagic
@@ -102,7 +102,7 @@ And the following Template:
 When you do a request to the Lettr Api
 
     test_object = TestClass.new
-    Lettr.test_mail(:test => test_object ).deliver
+    Lettr.test_mail(:recipient => 'tg@digineo.de', :test => test_object ).deliver
 
 Lettr will invoke the methods :variable_1 and :variable_2 on test_object and serialize their return values for the request.
 So the request will result in the following Mailing:
