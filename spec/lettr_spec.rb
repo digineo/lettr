@@ -5,7 +5,8 @@ describe Lettr do
   before do
     Lettr.protocol = 'http'
     Lettr.host = 'newsletter.localhost'
-    Lettr.credentials = { :user => 'dennis', :pass => 'dennis' }
+    #Lettr.credentials = { :user => 'dennis', :pass => 'dennis' }
+    Lettr.api_key = "377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97"
   end
 
   it 'should set the host' do

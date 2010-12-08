@@ -16,7 +16,7 @@ Lettr::Recipient = Struct.new( :email, :id, :gender, :firstname, :lastname, :str
   end
 
   def self.delete_by_email email
-    client["#{path}/destroy_by_email"].delete :email => email
+    client["#{path}/destroy_by_email"].delete :email => email #, 'X-Lettr-API-Key' => Lettr.api_key
   end
 
 end

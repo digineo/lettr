@@ -17,6 +17,7 @@ module Lettr
   mattr_accessor :attributes
   mattr_accessor :protocol
   mattr_accessor :api_mailings
+  mattr_accessor :api_key
 
   self.attributes ||= %w{ gender firstname lastname street ccode pcode city }
   self.protocol ||= 'http'

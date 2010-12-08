@@ -2,11 +2,13 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :post
-    uri: http://dennis:dennis@newsletter.localhost:80/recipients
-    body: recipient[pcode]=&recipient[lastname]=Mustermann&recipient[city]=test%20city&recipient[email]=test%40example.com&recipient[gender]=m&recipient[street]=&recipient[approved]=true&recipient[ccode]=&recipient[id]=&recipient[firstname]=Max
+    uri: http://newsletter.localhost:80/recipients
+    body: recipient[pcode]=&recipient[lastname]=Mustermann&recipient[city]=test%20city&recipient[email]=test%40example.com&recipient[gender]=m&recipient[street]=&recipient[ccode]=&recipient[approved]=true&recipient[firstname]=Max&recipient[id]=
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       content-type: 
       - application/x-www-form-urlencoded
       accept-encoding: 
@@ -19,7 +21,7 @@
       message: Created
     headers: 
       location: 
-      - http://newsletter.localhost/recipients/2256
+      - http://newsletter.localhost/recipients/2073
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 2.2.15
       content-type: 
@@ -27,23 +29,23 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:39 GMT
+      - Tue, 07 Dec 2010 16:56:50 GMT
       x-runtime: 
-      - "69"
+      - "54"
       content-length: 
       - "445"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU0ODNkYTNjOTVkNzJlZDAwMzQ4YmUzYjM4MjMwMTI4NQ%3D%3D--b8c4ee621c6dfefe1161759ea3dd25ac92f8a89e; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU5MTJkODkyMDVhMzBjODA4YmJhYjIyOWYxNTdhZGEyNw%3D%3D--2a27602bbd0549f35d38fa2916044b02ef73211e; path=/; HttpOnly
       cache-control: 
       - no-cache
       status: 
       - "201"
-    body: "{\"recipient\":{\"pcode\":\"\",\"name\":null,\"city\":\"test city\",\"cached_tag_list\":\"\",\"hard_bounce_count\":0,\"created_at\":\"2010-11-02T11:49:39+01:00\",\"birthdate\":null,\"updated_at\":\"2010-11-02T11:49:39+01:00\",\"import_id\":null,\"soft_bounce_count\":0,\"only_text\":false,\"street\":\"\",\"lastname\":\"Mustermann\",\"id\":2256,\"gender\":\"m\",\"approved\":true,\"user_id\":1,\"firstname\":\"Max\",\"ccode\":null,\"approved_at\":null,\"key\":\"test@example.com\",\"email\":\"test@example.com\"}}"
+    body: "{\"recipient\":{\"pcode\":\"\",\"name\":null,\"city\":\"test city\",\"cached_tag_list\":\"\",\"hard_bounce_count\":0,\"created_at\":\"2010-12-07T17:56:51+01:00\",\"birthdate\":null,\"updated_at\":\"2010-12-07T17:56:51+01:00\",\"import_id\":null,\"soft_bounce_count\":0,\"only_text\":false,\"street\":\"\",\"lastname\":\"Mustermann\",\"id\":2073,\"gender\":\"m\",\"approved\":true,\"user_id\":1,\"firstname\":\"Max\",\"ccode\":null,\"approved_at\":null,\"key\":\"test@example.com\",\"email\":\"test@example.com\"}}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :delete
-    uri: http://dennis:dennis@newsletter.localhost:80/recipients/destroy_by_email
+    uri: http://newsletter.localhost:80/recipients/destroy_by_email
     body: 
     headers: 
       accept: 
@@ -54,37 +56,41 @@
       - test@example.com
   response: !ruby/struct:VCR::Response 
     status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
+      code: 401
+      message: Authorization Required
     headers: 
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 2.2.15
       content-type: 
-      - application/json; charset=utf-8
+      - application/xml; charset=utf-8
+      www-authenticate: 
+      - Basic realm="Web Password"
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:39 GMT
+      - Tue, 07 Dec 2010 16:56:51 GMT
       x-runtime: 
-      - "8"
-      content-length: 
       - "1"
-      set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVkNjQwYWE5N2ViNWYyOTY3MzNjZmYzMTQyN2YyZTMxNw%3D%3D--ae46bd59624e7e84281f94862c9a281181d40b6c; path=/; HttpOnly
+      content-length: 
+      - "27"
       cache-control: 
       - no-cache
       status: 
-      - "200"
-    body: " "
+      - "401"
+    body: |
+      HTTP Basic: Access denied.
+
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :delete
-    uri: http://dennis:dennis@newsletter.localhost:80/recipients/2256
+    uri: http://newsletter.localhost:80/recipients/2073
     body: 
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       accept-encoding: 
       - gzip, deflate
   response: !ruby/struct:VCR::Response 
@@ -99,13 +105,13 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:40 GMT
+      - Tue, 07 Dec 2010 16:56:51 GMT
       x-runtime: 
-      - "158"
+      - "76"
       content-length: 
       - "1"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiUyY2I3ZTQzZWFlZWJmYzhlZTI2OWEzOWU4NjlmZTU3Ng%3D%3D--90672d888a8d43e277df1bdad45ca8f180a10bda; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVlZTljODZmZmQ2N2VmZGEzNGMyOGM1NjgwMmJjMTdlYQ%3D%3D--7e951a62cfd16e44eb71ea0d1f4536da3d7b74d9; path=/; HttpOnly
       cache-control: 
       - no-cache
       status: 

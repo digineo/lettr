@@ -2,11 +2,13 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://dennis:dennis@newsletter.localhost:80/api_mailings/pre_rendered_mail
+    uri: http://newsletter.localhost:80/api_mailings/pre_rendered_mail
     body: 
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       accept-encoding: 
       - gzip, deflate
   response: !ruby/struct:VCR::Response 
@@ -19,15 +21,15 @@
       content-type: 
       - text/html; charset=utf-8
       date: 
-      - Tue, 02 Nov 2010 10:49:33 GMT
+      - Tue, 07 Dec 2010 16:56:46 GMT
       server: 
       - Apache/2.2.16 (Ubuntu)
       content-length: 
-      - "1966"
+      - "2096"
       content-encoding: 
       - gzip
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU2ZTJhNmE0ZDdiZjM3ZmY2ODhjMmJhNDZjYThkNzlmMw%3D%3D--18fe82f2864a279ea66708e39b613868f9fdbc94; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU0M2Q0MDE4MjE4YzdjM2UwZjU4MGQ5NzdiOTA3ZGJhYQ%3D%3D--9e5e36e1f0c2488d38e70e49ffedc82b6f9accc5; path=/; HttpOnly
       vary: 
       - Accept-Encoding
       status: 
@@ -35,60 +37,65 @@
       cache-control: 
       - no-cache
     body: !binary |
-      H4sIAAAAAAAAA+1bbW/jNhL+nl/BeoHmCsSWZSV+VYTbK1q0QO+22O53HS3R
-      FhFKVEkqjndv/3uHpGRrbSfrjW0lPTjArm2+zDzzwiFnRPmJShl6SFkmb1uJ
-      UvnYcRaLRWfhdbiYO+5oNHIe9JhWcOEnBMfBBUK+ooqR4G2kKM/QjzxTgjNG
-      xBj99BCR3LRGuJgnynfsUD1JqqX9htCUx0v0CU1xdDcXvMjidsQZh/lvZrPZ
-      BFU/PM+boM8XqylXKL9CnF2hAv6pGH0yPQjNAEF7hlPKlmN0T0SMM3yFsKAY
-      xiWE3RNFI2iROJNtSQSdTeozJf1IxvDD9fKHqoPRjLQTQkGGMXKHVUcJJhdk
-      xXyHEISQik6O45hmc6DRXROvcXXdDdIY9FLR6Xa7Wn7TPL6nkioS17r7/f66
-      O+EgeK3TKHIL25qk75T28B1rVl9rOLgAK7vaSNq49+Q9ibiIx2P7+R+uftbE
-      oNtwpRl6m1OUYgrqmsu1I7yRCV/oUUAcqPmgr+BHXrA4u1RoRrNYz/u3nYYW
-      VCWIxiRTdEZBhlut3lCQLCaCxKGm7juawgX8+XngRzwmwfu3v/72R/j+3bsP
-      Y+QkPCXgaSl3dJ8jYIp0MrKQjChFhG+aA6Ci5YvpPbC7bSmBIyJbQSWN+c/H
-      KBFkdtt600I8ixiN7m5bMY+KFPB15kT9xIj++q/lr/E/Ln8WOCULLu7aHzSx
-      yx86RqmdmMqc4eXtZcYzcjl5fH7B2DOnvs1zAIf1WnuMwpTx6O5yMkGCqEJk
-      aIaZJJNWUJuKzFTfwQH63wF62APM6TTxVSM8pofVxNejhRP606NagDk1BWj5
-      Kx2slsqWZC1kqIMyLPkxMuQnraAMcWbJ25VaW50dcZ86c5JKRxDSdjvDzqDd
-      67rdTtf953q52hHYBCBhAk+71/E6Q4fRadkc2nZniiXpiOnYHbm9MYSj/+rg
-      Ek6X4TqefHd50RCCG4NAQuBqmGVKVMIhUlIpIaCGOqDyQoU5ntMMK/JsNAvK
-      2IqKgePeGDxfdDha50QYRIPuDkCn1QaWkkfU+Kas/wgjvRWZI4qG5g27DZnn
-      GwGdynjf5Eo9dzA0aDT7UEY8PzHjR5WUC/6wNJC6g5c22BaWF9fOhgsN+n+7
-      9b/zgObgPIee6vgIMuc0rI6V4bpD87ixLASRvBDR84WjWQKZAJyow4qUhBnd
-      Tt9IuKPX2AgMYgT1rG/CMfe744rXG60oH+RjPMvh8L/hYcaDKm7rfcTz3OMs
-      tecwzYmYcZGG5dDKeWeUAWl5ajglG42o79pFHmFw7pdg331KH1OSRUmKxd3J
-      DVQxAuc0uIZPwYLVERWHRkNZ5DkXajsclh2wdiAjJA9qDc5GGxtsDrPSC7N/
-      jRbZA5PlYtTQf9JvZwzL5OTLSDMxYG52BZWmYtqN12s8jlY84awCe5R8yfjZ
-      7deRNKUAb+S+CNthf7VbnHyxgUFh7ZtPiEpEaQDX3nANYF3hEmWJ1XcgeQ+2
-      MvmNCsN2Hq8rDHul8aKYUrJDSCMDdC4daP4yYnrdYXl2wwwInTxIaaGwihJ7
-      shraeF01Nsvc7VkvDZvwlw3WXrdZfu51Yytjg3P3WUtiVTQ7YDWci1rnota5
-      qHUuap2LWuei1rmodS5qnYta56LWsatKL51xnStl50rZuVJ2rpT9rStl55LT
-      6y85fTWV+LMgYglyAb/a8fJgOV8tX1B0ZjOkEMc4V+a4PZX6BqPaBOVV1Tf4
-      3ag2Ri/Et3ek1X2YFWqdOefMWKLvHo4swSlre5DC9ew5T0Lm7OSsgDQVUrLI
-      nK+uj8Bnz3UO0upsPOJERGXC3rs5nLuWBIZAqmoPs/DTXEuu+9WRydt0Xt+a
-      FjS2jtRc3TrHAqcyhA9ZRswjKHFfE8LeD03gsfyOwiap4Mxu9HykaLbPWUjX
-      EvDMav0Ip4Nd9tX3Ue3jiEboyyWkHoJn9OPzo9+pxXj1j3MEYRyXZbdyHxPF
-      yZOSJx4i7cnZNucQmkk2JwK49aqqYp4U0mwKVac1qyCwi0kVJjiLyyLZ6Mv0
-      pBxxEgjVrhXugFGVhVNMs5Bxnp9ICZR91CXE6l55CDZYZBbCdbmhSYXFFsbm
-      4XhDC8cCsD1hbexJEEEew6TdXstUGeJlCKn63rWyIypgMGheASsfhR3yvsRR
-      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
+      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
+      bxomcosbALBnnwQDmFTOoj8BnQlWNiJIAAA=
 
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://dennis:dennis@newsletter.localhost:80/rendered_mailings/pre_rendered_mail
+    uri: http://newsletter.localhost:80/rendered_mailings/pre_rendered_mail
     body: 
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       accept-encoding: 
       - gzip, deflate
   response: !ruby/struct:VCR::Response 
@@ -103,13 +110,13 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:36 GMT
+      - Tue, 07 Dec 2010 16:56:47 GMT
       content-length: 
-      - "1959"
+      - "2022"
       content-encoding: 
       - gzip
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU3Yzg2N2MyM2Q4OGU2MTk5NzZjYzJhM2E1OTNmYzYwNA%3D%3D--83c0711be5a61a4232737e989fb6dea7b7d22176; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVmM2NlY2RkYjlmNDYwY2QwMTE4ZTRiNWJjODljZTg3Yg%3D%3D--f26d049cce16f7dd9edda59d8b8669cfeee06856; path=/; HttpOnly
       cache-control: 
       - no-cache
       status: 
@@ -117,60 +124,63 @@
       vary: 
       - Accept-Encoding
     body: !binary |
-      H4sIAAAAAAAAA+1bbW/jNhL+nl/BeoHmDogsy0r8qgjdFi2uwN31kO53HS3R
-      FhFJVEkqjnev//2GpGRrYyfrjS05WzjArm2+zDzzwiFnRHmxTBP0mCaZuO3E
-      UuYT214ul92l22V8YTvj8dh+VGM6/oUXExz5Fwh5ksqE+O9DSVmGfmKZ5CxJ
-      CJ+gnx9DkuvWEBeLWHq2GaomCbky3xCasWiFPqEZDu8XnBVZZIUsYTD/3Xw+
-      n6Lqh+u6U/TnxXrKFcqvEEuuUAH/ZIQ+6R6E5oDAmuOUJqsJeiA8whm+QphT
-      DONikjwQSUNoETgTliCczqf1mYJ+JBP44bj5Y9WR0IxYMaEgwwQ5o6qjBJNz
-      sma+QwhCSEUnx1FEswXQ6G2I17g6zhPSGPRS0en1ekp+3Tx5oIJKEtW6B4PB
-      pjtmIHitUytyC9uGpGeX9vBsY1ZPadi/ACs7ykjKuA/kjoSMR5OJ+fw3k78o
-      YtCtudIM3ZEsIhxgpZiCzhZi4w3vRMyWaihwAJIeKM3/iRVJlF1KNKdZtJ78
-      LzMXLamMEY1IJumcgjS3StEBL0cFioVnKzIX8OflvheyiPh373/95+/B3W+/
-      fZggO2YpAZ9Lma36bA5ThJ2RpUiIlIR7utkHKkrSiD4Au9uO5DgkouNXcun/
-      PIxiTua3nXcdxLIwoeH9bSdiYZECvu6CyJ8Tor7+uPo1+tvlLxynZMn4vfVB
-      Ebv8e1ertxtRkSd4dXuZsYxcTp+fXyTJK6e+z3MAh9Wqe47CLGHh/eV0ijiR
-      Bc/QHCeCTDt+bSrSUz0b++h/B+hhDzDNaeKLRnhOD+uJb0cLDfrTs1qAOTUF
-      KPkrHayXypZkHaSpgzIM+QnS5Kcdvwx2et2blVpbnV3+kNoLkgqbE2I53VF3
-      aPV7Tq/bc37YLFczAutQxHUIsvpdtzuyEzormwPTbs+wIF0+mzhjpz+BwPRf
-      FWGC2SrYxJPvLi9aQnCjEQgIXC2zTImMGURKKgQE1EAFVFbIIMcLmmFJXo1m
-      SZNkTUXDcW40ns86bKVzwjWiYW8HoGa1gYVgIdW+Keo/glDtR/qwoqC5o15L
-      5vlKQE0Z76tcqe8MRxqNYh+IkOUNM35WSTlnjysNqTc8tcG2sJxcO09caDj4
-      5tb/zgOajfMceqozpMJWO/2pA2aw6dWMrjUfTgQrePh6CWkWQ2IAB+ygIiVg
-      Rq870GLu6NWGAqtoEK5xUDjwHuQOLMvhxP7EGbSxK5E3Id91neOsitcwzQmf
-      M54G5dDKz+Y0AdKiaTglG4Vo4Jj1GGLww1Ow772kjxnJwjjF/L5xA1WMYIVo
-      XKOXYIEPh8WhgUsUec643I5cZQesYkjeyKPcgDOBwcSFw6x0YvZv0SJ7YDJc
-      tBoGL/rtPMEibnwZKSYazM2uoNJWTLtx+63H0YonHCtgJxGnjJ+9QR1JWwpw
-      x85J2I4G692i8cUGBoW1rz8hKhGpAFy7ow2ATTGKl3VRz4Y8299Kup8UA7ZT
-      blUM2Cvj5sWMkh1Cahmgc2VD8+cR0+2NyhMWToBQ40FKCYVlGJvj3cjE66qx
-      XeZO33hp0Ia/PGHt9trlV56jTyBp71VLYl3fOmA1nOtP5/rTuf50rj+d60/n
-      +tO5/nSuP53rT99MtaOJAtCpk6NzUetc1DoXtc5FrW+6qHWuDr396tAXT/1/
-      FISvQC7gp5OO8XHs+2b5gqIzk8wEOMK5iiM2ngl1L1A+BeVWhTL43ao2xifi
-      2z/S6j7MCrXOnLFEW2LgHI4sxmliuZBo9c05T0CSa+dJARklJIehPl9dH4HP
-      nuscpFWJc8gID8vcun9zOHclCQyBhNIcZuGnvvZb96sjkzeZt7qVzGlkHKm9
-      EnOOOU5FAB+ijJhHUOK+JoS9H5rAY9k9hU1Swpld6/lI0Wyfs5CqauC50foR
-      Tge77KtueZonB63QFytIPTjL6MfXR7+mxXjzT144SRguK2TlPsaLxpOSF573
-      7MnZNOcQmkm2IBy49asCYB4XQm8KVacxKyewiwkZxDiLykrd+PP0pBzRCIRq
-      1wp2wKgquCmmWZAwljekBJp8VMXM6rZ2ADZYZgbCdbmhCYn5Fsb24bgjA8cA
-      MD1BbWwjiCCPSYTZXstUGeJlAKn63rWyIypgOGxfAWsfhR3yocRRqiIIVN0g
-      CNrm2+yS2MHYGQ9qC6HaYlghklVrEAbuBkL7rtfv9xtmb7w5xRlelCxvSol1
-      h34A07azP3l65ZRnJHC9+yIPGIf8Y++y2YHKuB6+MWVUT6e//rx1RBDDcSsg
-      dphj0Lo5tkA41zc1EK2z75cP4M+70V9mN5rRrNaoLWoZvpOB89Kdq/Kb+fPi
-      fnXXKsV8QTNLsnyC3F7+2PHvzCnSs+O+r9/Nnfn/UUk4UWUcz575E3MT69P3
-      fxRMTmlkPm+/X8ip+br1rq9p/tMAK1/ZBcJf9SZmmYwHUZHmz74J+fRFyN9j
-      tkTlTKRmqvchNYD1/bM63a0baOoCWsdX4qIwAbXfXkZkViwMCN+yLKVYI1Sp
-      3i+oVuQsE6Su238QlcftUKx6/xqktz6scrKlYvP/1QUqx6oSn1W+sb01OGOW
-      rgHuMAMAts3r4oBJpon/fxHskZlHQAAA
+      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
 
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :post
-    uri: http://dennis:dennis@newsletter.localhost:80/rendered_mailings
+    uri: http://newsletter.localhost:80/rendered_mailings
     body: rendered_mailing[identifier]=pre_rendered_mail&rendered_mailing[subject]=test%20subject
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       content-type: 
       - application/x-www-form-urlencoded
       accept-encoding: 
@@ -191,27 +201,29 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:37 GMT
+      - Tue, 07 Dec 2010 16:56:47 GMT
       x-runtime: 
-      - "82"
+      - "159"
       content-length: 
-      - "466"
+      - "489"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVkZTkzNTYyM2I0Y2ZmMTVjZDk4NTRiZTI0OTc2ZGExMw%3D%3D--fceac78741036a281b53a4bf63482f513fd45942; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU0MjU0ZmVjYzU0ODhiZWFkMTQyMGZkMWNlZWI3Y2U3OA%3D%3D--c884de84efafd2fff74cb4c23fb025f11739190f; path=/; HttpOnly
       cache-control: 
       - no-cache
       status: 
       - "201"
-    body: "{\"rendered_mailing\":{\"html\":null,\"created_at\":\"2010-11-02T11:49:37+01:00\",\"search_filter_id\":null,\"updated_at\":\"2010-11-02T11:49:37+01:00\",\"premium\":true,\"mailing_template_id\":null,\"linktracking_disabled\":false,\"deliver_on\":null,\"text\":null,\"salutation_id\":1,\"only_text\":false,\"template_html\":null,\"subject\":\"test subject\",\"id\":110,\"user_id\":1,\"template_text\":null,\"sync_html2text\":true,\"identifier\":\"pre_rendered_mail\",\"state\":\"active\",\"recurrent_mailing_id\":null}}"
+    body: "{\"rendered_mailing\":{\"html\":null,\"sender_email_id\":null,\"created_at\":\"2010-12-07T17:56:47+01:00\",\"search_filter_id\":null,\"updated_at\":\"2010-12-07T17:56:47+01:00\",\"premium\":true,\"mailing_template_id\":null,\"linktracking_disabled\":false,\"deliver_on\":null,\"text\":null,\"salutation_id\":1,\"only_text\":false,\"template_html\":null,\"subject\":\"test subject\",\"id\":112,\"user_id\":1,\"template_text\":null,\"sync_html2text\":true,\"identifier\":\"pre_rendered_mail\",\"state\":\"active\",\"recurrent_mailing_id\":null}}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :post
-    uri: http://dennis:dennis@newsletter.localhost:80/api_mailings/pre_rendered_mail/deliveries
-    body: delivery[api_mailing_id]=pre_rendered_mail&delivery[identifier]=pre_rendered_mail&delivery[text]=test%20text&delivery[subject]=test%20subject&delivery[html]=%3Cdiv%3Etest%20html%3C%2Fdiv%3E&delivery[recipient]=timo%40moe.digineo.lan
+    uri: http://newsletter.localhost:80/api_mailings/pre_rendered_mail/deliveries
+    body: delivery[identifier]=pre_rendered_mail&delivery[api_mailing_id]=pre_rendered_mail&delivery[text]=test%20text&delivery[html]=%3Cdiv%3Etest%20html%3C%2Fdiv%3E&delivery[recipient]=timo%40moe.digineo.lan&delivery[subject]=test%20subject
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       content-type: 
       - application/x-www-form-urlencoded
       accept-encoding: 
@@ -230,13 +242,13 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:37 GMT
+      - Tue, 07 Dec 2010 16:56:47 GMT
       x-runtime: 
-      - "267"
+      - "179"
       content-length: 
       - "1"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiUzN2MyMzIzYjY5ZWFiODM3ZWMzODgzMjg3NTYxYTc5Zg%3D%3D--0fb6a70235d8169da5b99bcb598b9ddfcdae9b99; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU2ZTlmYTdhYzUwNTIxMzA4OTJlMmQzMzdmODhhM2JjMw%3D%3D--224005250f4fa1929c1b5dd671c3a6546d01dbf1; path=/; HttpOnly
       cache-control: 
       - no-cache
       status: 
@@ -246,11 +258,13 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :delete
-    uri: http://dennis:dennis@newsletter.localhost:80/rendered_mailings/pre_rendered_mail
+    uri: http://newsletter.localhost:80/rendered_mailings/pre_rendered_mail
     body: 
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       accept-encoding: 
       - gzip, deflate
   response: !ruby/struct:VCR::Response 
@@ -265,13 +279,13 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:37 GMT
+      - Tue, 07 Dec 2010 16:56:48 GMT
       x-runtime: 
-      - "78"
+      - "89"
       content-length: 
       - "1"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVlYmViMWEzOTZmNDU5ZTBkNGM5ODQ1YmQ5YzVmMDRjNw%3D%3D--5bff3e3e24c7572cd88fed25c6b8e1a78d021161; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVlMmZhNzgyZjkyMGU2MjMwMGE1ZTA4YmE2MTlmNGFhMw%3D%3D--52c6ed33685c1095723442a8deed1cec72aa1f5e; path=/; HttpOnly
       cache-control: 
       - no-cache
       status: 
@@ -281,11 +295,13 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://dennis:dennis@newsletter.localhost:80/api_mailings/reminder_mail
+    uri: http://newsletter.localhost:80/api_mailings/reminder_mail
     body: 
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       accept-encoding: 
       - gzip, deflate
   response: !ruby/struct:VCR::Response 
@@ -296,35 +312,37 @@
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 2.2.15
       etag: 
-      - "\"3f1a098bd8b0dc080234aefea6b2b5ef\""
+      - "\"2e33fafea77ff64a15fc27d53d68f50e\""
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "18"
+      - "139"
       date: 
-      - Tue, 02 Nov 2010 10:49:38 GMT
+      - Tue, 07 Dec 2010 16:56:48 GMT
       server: 
       - Apache/2.2.16 (Ubuntu)
       content-length: 
       - "152"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVmOTdlZTYyMDNjYzVhNzk2MWY3NjU3NDI3YzA1OGY4Ng%3D%3D--09bbd91d6a860f9a75c4be743d04d91e0f547dae; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVhNjM2OTQ5YTZlNTg5ZmIwOTEzZTNiZDRhMzAzZjY5ZA%3D%3D--deb56673793273acf0cd904608c51c75e1b2c524; path=/; HttpOnly
       status: 
       - "200"
       cache-control: 
       - private, max-age=0, must-revalidate
-    body: "{\"api_mailing\":{\"subject\":\"Intervillas - Ihre Anfrage (Erinnerung)\",\"identifier\":\"reminder_mail\",\"variables\":[\"booking.salutation\",\"booking.edit_url\"]}}"
+    body: "{\"api_mailing\":{\"subject\":\"Intervillas - Ihre Anfrage (Erinnerung)\",\"variables\":[\"booking.salutation\",\"booking.edit_url\"],\"identifier\":\"reminder_mail\"}}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :post
-    uri: http://dennis:dennis@newsletter.localhost:80/api_mailings/reminder_mail/deliveries
-    body: delivery[api_mailing_id]=reminder_mail&delivery[variables][]=booking.salutation&delivery[variables][]=booking.edit_url&delivery[booking][salutation]=&delivery[booking][edit_url]=&delivery[recipient]=timo%40moe.digineo.lan
+    uri: http://newsletter.localhost:80/api_mailings/reminder_mail/deliveries
+    body: delivery[variables][]=booking.salutation&delivery[variables][]=booking.edit_url&delivery[api_mailing_id]=reminder_mail&delivery[booking][salutation]=&delivery[booking][edit_url]=&delivery[recipient]=timo%40moe.digineo.lan
     headers: 
       accept: 
       - application/json
       content-type: 
       - application/x-www-form-urlencoded
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       accept-encoding: 
       - gzip, deflate
       content-length: 
@@ -339,15 +357,15 @@
       content-type: 
       - application/json; charset=utf-8
       x-runtime: 
-      - "254"
+      - "164"
       date: 
-      - Tue, 02 Nov 2010 10:49:38 GMT
+      - Tue, 07 Dec 2010 16:56:48 GMT
       server: 
       - Apache/2.2.16 (Ubuntu)
       content-length: 
       - "1"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVjZTRjNDFmY2ExZWZmZDBmZDUzZDA2ZDk4NTYxNjQwYg%3D%3D--02ffe6d3cca0ffe5c77598df47aa6058460c375f; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiUzNjE3ZTU5OGQ2Nzc5ZmJiYjg5NTU2NDUzNTFhOWRlYw%3D%3D--2261d4caba69b468a1a10e94bf02ed1ea3a10432; path=/; HttpOnly
       status: 
       - "201"
       cache-control: 
@@ -357,11 +375,13 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://dennis:dennis@newsletter.localhost:80/api_mailings/confirmation_mail
+    uri: http://newsletter.localhost:80/api_mailings/confirmation_mail
     body: 
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       accept-encoding: 
       - gzip, deflate
   response: !ruby/struct:VCR::Response 
@@ -370,7 +390,7 @@
       message: OK
     headers: 
       etag: 
-      - "\"b2598372e354cc0503ad0d280e3fa949\""
+      - "\"2d86ad6078751a5aa8ee9a6b97dd8786\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 2.2.15
       content-type: 
@@ -378,27 +398,29 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:38 GMT
+      - Tue, 07 Dec 2010 16:56:49 GMT
       x-runtime: 
-      - "18"
+      - "45"
       content-length: 
       - "1048"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiUzYTI3MzBhMDk1ZjQ2MzlhOWYyNDMwMWVjYTYwOTRjOQ%3D%3D--4f4b5216aee786a4604fffafa26430d7b4f1d50c; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU0YjM4Njc3YTkyZDQ1NWU5YTEyYmNkZTMxOGMxMzRlMg%3D%3D--416866d10424a8de3a3df00aa2380562918621b4; path=/; HttpOnly
       cache-control: 
       - private, max-age=0, must-revalidate
       status: 
       - "200"
-    body: "{\"api_mailing\":{\"subject\":\"Intervillas - Auftragsbest\\u00e4tigung\",\"identifier\":\"confirmation_mail\",\"variables\":[\"booking.number\",\"booking.villa.name\",\"booking.start_date\",\"booking.end_date\",\"booking.nights\",\"booking.persons\",\"booking.price_total_persons\",\"booking.price_adults\",\"booking.price_children\",\"booking.price_total_persons\",\"booking.cleaning\",\"booking.boat_training\",\"booking.price_total\",\"booking.house_deposit\",\"booking.boat_deposit\",\"booking.deposit\",\"booking.title\",\"booking.name\",\"booking.address\",\"booking.appnr\",\"booking.postal_code\",\"booking.city\",\"booking.country\",\"booking.phone\",\"booking.email\",\"booking.villa.name\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.safe_code\",\"booking.villa.phone\",\"booking.villa.name\",\"booking.travelers[traveler]\",\"booking.travelers[traveler].traveler.name\",\"booking.discount?\",\"booking.late?\",\"booking.total_discount\",\"booking.price_total_with_discount\",\"booking.downpayment_deadline\",\"booking.downpayment\",\"booking.payment_deadline\",\"booking.remainder\"]}}"
+    body: "{\"api_mailing\":{\"subject\":\"Intervillas - Auftragsbest\\u00e4tigung\",\"variables\":[\"booking.number\",\"booking.villa.name\",\"booking.start_date\",\"booking.end_date\",\"booking.nights\",\"booking.persons\",\"booking.price_total_persons\",\"booking.price_adults\",\"booking.price_children\",\"booking.price_total_persons\",\"booking.cleaning\",\"booking.boat_training\",\"booking.price_total\",\"booking.house_deposit\",\"booking.boat_deposit\",\"booking.deposit\",\"booking.title\",\"booking.name\",\"booking.address\",\"booking.appnr\",\"booking.postal_code\",\"booking.city\",\"booking.country\",\"booking.phone\",\"booking.email\",\"booking.villa.name\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.safe_code\",\"booking.villa.phone\",\"booking.villa.name\",\"booking.travelers[traveler]\",\"booking.travelers[traveler].traveler.name\",\"booking.discount?\",\"booking.late?\",\"booking.total_discount\",\"booking.price_total_with_discount\",\"booking.downpayment_deadline\",\"booking.downpayment\",\"booking.payment_deadline\",\"booking.remainder\"],\"identifier\":\"confirmation_mail\"}}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :post
-    uri: http://dennis:dennis@newsletter.localhost:80/api_mailings/confirmation_mail/deliveries
-    body: delivery[api_mailing_id]=confirmation_mail&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.start_date&delivery[variables][]=booking.end_date&delivery[variables][]=booking.nights&delivery[variables][]=booking.persons&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.price_adults&delivery[variables][]=booking.price_children&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.cleaning&delivery[variables][]=booking.boat_training&delivery[variables][]=booking.price_total&delivery[variables][]=booking.house_deposit&delivery[variables][]=booking.boat_deposit&delivery[variables][]=booking.deposit&delivery[variables][]=booking.title&delivery[variables][]=booking.name&delivery[variables][]=booking.address&delivery[variables][]=booking.appnr&delivery[variables][]=booking.postal_code&delivery[variables][]=booking.city&delivery[variables][]=booking.country&delivery[variables][]=booking.phone&delivery[variables][]=booking.email&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.safe_code&delivery[variables][]=booking.villa.phone&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.travelers%5Btraveler%5D&delivery[variables][]=booking.travelers%5Btraveler%5D.traveler.name&delivery[variables][]=booking.discount%3F&delivery[variables][]=booking.late%3F&delivery[variables][]=booking.total_discount&delivery[variables][]=booking.price_total_with_discount&delivery[variables][]=booking.downpayment_deadline&delivery[variables][]=booking.downpayment&delivery[variables][]=booking.payment_deadline&delivery[variables][]=booking.remainder&delivery[booking][city]=test%20city&delivery[booking][address]=test%20street&delivery[booking][name]=&delivery[booking][boat_deposit]=&delivery[booking][house_deposit]=&delivery[booking][start_date]=Tue%20Nov%2030%2011%3A49%3A33%20%2B0100%202010&delivery[booking][downpayment_deadline]=&delivery[booking][price_children]=&delivery[booking][persons]=&delivery[booking][price_total_with_discount]=&delivery[booking][country]=&delivery[booking][title]=Herr&delivery[booking][travelers][name]=&delivery[booking][postal_code]=&delivery[booking][cleaning]=&delivery[booking][price_adults]=&delivery[booking][price_total_persons]=&delivery[booking][price_total]=&delivery[booking][boat_training]=&delivery[booking][villa][name]=&delivery[booking][villa][street]=&delivery[booking][villa][phone]=&delivery[booking][villa][safe_code]=&delivery[booking][downpayment]=&delivery[booking][phone]=&delivery[booking][appnr]=&delivery[booking][nights]=&delivery[booking][payment_deadline]=&delivery[booking][total_discount]=&delivery[booking][discount%3F]=&delivery[booking][remainder]=&delivery[booking][late%3F]=&delivery[booking][end_date]=Tue%20Dec%2007%2011%3A49%3A33%20%2B0100%202010&delivery[booking][email]=timo%40moe.digineo.lan&delivery[booking][deposit]=&delivery[recipient]=timo%40moe.digineo.lan
+    uri: http://newsletter.localhost:80/api_mailings/confirmation_mail/deliveries
+    body: delivery[variables][]=booking.villa.name&delivery[variables][]=booking.start_date&delivery[variables][]=booking.end_date&delivery[variables][]=booking.nights&delivery[variables][]=booking.persons&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.price_adults&delivery[variables][]=booking.price_children&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.cleaning&delivery[variables][]=booking.boat_training&delivery[variables][]=booking.price_total&delivery[variables][]=booking.house_deposit&delivery[variables][]=booking.boat_deposit&delivery[variables][]=booking.deposit&delivery[variables][]=booking.title&delivery[variables][]=booking.name&delivery[variables][]=booking.address&delivery[variables][]=booking.appnr&delivery[variables][]=booking.postal_code&delivery[variables][]=booking.city&delivery[variables][]=booking.country&delivery[variables][]=booking.phone&delivery[variables][]=booking.email&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.safe_code&delivery[variables][]=booking.villa.phone&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.travelers%5Btraveler%5D&delivery[variables][]=booking.travelers%5Btraveler%5D.traveler.name&delivery[variables][]=booking.discount%3F&delivery[variables][]=booking.late%3F&delivery[variables][]=booking.total_discount&delivery[variables][]=booking.price_total_with_discount&delivery[variables][]=booking.downpayment_deadline&delivery[variables][]=booking.downpayment&delivery[variables][]=booking.payment_deadline&delivery[variables][]=booking.remainder&delivery[api_mailing_id]=confirmation_mail&delivery[booking][city]=test%20city&delivery[booking][address]=test%20street&delivery[booking][name]=&delivery[booking][boat_deposit]=&delivery[booking][house_deposit]=&delivery[booking][start_date]=Tue%20Jan%2004%2017%3A56%3A46%20%2B0100%202011&delivery[booking][downpayment_deadline]=&delivery[booking][price_children]=&delivery[booking][persons]=&delivery[booking][price_total_with_discount]=&delivery[booking][country]=&delivery[booking][title]=Herr&delivery[booking][travelers][name]=&delivery[booking][postal_code]=&delivery[booking][cleaning]=&delivery[booking][price_adults]=&delivery[booking][price_total_persons]=&delivery[booking][price_total]=&delivery[booking][boat_training]=&delivery[booking][villa][name]=&delivery[booking][villa][street]=&delivery[booking][villa][phone]=&delivery[booking][villa][safe_code]=&delivery[booking][downpayment]=&delivery[booking][phone]=&delivery[booking][appnr]=&delivery[booking][nights]=&delivery[booking][payment_deadline]=&delivery[booking][total_discount]=&delivery[booking][discount%3F]=&delivery[booking][remainder]=&delivery[booking][late%3F]=&delivery[booking][end_date]=Tue%20Jan%2011%2017%3A56%3A46%20%2B0100%202011&delivery[booking][email]=timo%40moe.digineo.lan&delivery[booking][deposit]=&delivery[recipient]=timo%40moe.digineo.lan
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       content-type: 
       - application/x-www-form-urlencoded
       accept-encoding: 
@@ -417,13 +439,13 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:38 GMT
+      - Tue, 07 Dec 2010 16:56:49 GMT
       x-runtime: 
-      - "32"
+      - "39"
       content-length: 
       - "49"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiUzMjFlZWU0NTI5ZWViZmQ3ZGQxNjY5YzY3M2ZkZTY5YQ%3D%3D--f8e8fa53e664a83c9ccabb8cba83e7aa43862210; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiUwMDE0Nzc0MmRmMDk5YmJmYTU1YmE2YTNjZGI0Y2QyZQ%3D%3D--20b0e5197af27b7a33f02e998f1237a5c35587f5; path=/; HttpOnly
       cache-control: 
       - no-cache
       status: 
@@ -433,11 +455,13 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: http://dennis:dennis@newsletter.localhost:80/api_mailings/confirmation_mail
+    uri: http://newsletter.localhost:80/api_mailings/confirmation_mail
     body: 
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       accept-encoding: 
       - gzip, deflate
   response: !ruby/struct:VCR::Response 
@@ -446,7 +470,7 @@
       message: OK
     headers: 
       etag: 
-      - "\"b2598372e354cc0503ad0d280e3fa949\""
+      - "\"2d86ad6078751a5aa8ee9a6b97dd8786\""
       x-powered-by: 
       - Phusion Passenger (mod_rails/mod_rack) 2.2.15
       content-type: 
@@ -454,27 +478,29 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:38 GMT
+      - Tue, 07 Dec 2010 16:56:49 GMT
       x-runtime: 
-      - "15"
+      - "44"
       content-length: 
       - "1048"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVjNjgyNjFjYjZjZGE0NDkzMDRlMGZkM2MyNTM5OWJiMQ%3D%3D--a70f5c72a04b332b2ecc1dc9aef9abd492b36464; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU4MDFhYTVmNzdjNjViOTg3NzJiMzZjOGY1MTRmNzg0Yw%3D%3D--ea580b2208074f07699b369932382fb3aebfc643; path=/; HttpOnly
       cache-control: 
       - private, max-age=0, must-revalidate
       status: 
       - "200"
-    body: "{\"api_mailing\":{\"subject\":\"Intervillas - Auftragsbest\\u00e4tigung\",\"identifier\":\"confirmation_mail\",\"variables\":[\"booking.number\",\"booking.villa.name\",\"booking.start_date\",\"booking.end_date\",\"booking.nights\",\"booking.persons\",\"booking.price_total_persons\",\"booking.price_adults\",\"booking.price_children\",\"booking.price_total_persons\",\"booking.cleaning\",\"booking.boat_training\",\"booking.price_total\",\"booking.house_deposit\",\"booking.boat_deposit\",\"booking.deposit\",\"booking.title\",\"booking.name\",\"booking.address\",\"booking.appnr\",\"booking.postal_code\",\"booking.city\",\"booking.country\",\"booking.phone\",\"booking.email\",\"booking.villa.name\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.safe_code\",\"booking.villa.phone\",\"booking.villa.name\",\"booking.travelers[traveler]\",\"booking.travelers[traveler].traveler.name\",\"booking.discount?\",\"booking.late?\",\"booking.total_discount\",\"booking.price_total_with_discount\",\"booking.downpayment_deadline\",\"booking.downpayment\",\"booking.payment_deadline\",\"booking.remainder\"]}}"
+    body: "{\"api_mailing\":{\"subject\":\"Intervillas - Auftragsbest\\u00e4tigung\",\"variables\":[\"booking.number\",\"booking.villa.name\",\"booking.start_date\",\"booking.end_date\",\"booking.nights\",\"booking.persons\",\"booking.price_total_persons\",\"booking.price_adults\",\"booking.price_children\",\"booking.price_total_persons\",\"booking.cleaning\",\"booking.boat_training\",\"booking.price_total\",\"booking.house_deposit\",\"booking.boat_deposit\",\"booking.deposit\",\"booking.title\",\"booking.name\",\"booking.address\",\"booking.appnr\",\"booking.postal_code\",\"booking.city\",\"booking.country\",\"booking.phone\",\"booking.email\",\"booking.villa.name\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.safe_code\",\"booking.villa.phone\",\"booking.villa.name\",\"booking.travelers[traveler]\",\"booking.travelers[traveler].traveler.name\",\"booking.discount?\",\"booking.late?\",\"booking.total_discount\",\"booking.price_total_with_discount\",\"booking.downpayment_deadline\",\"booking.downpayment\",\"booking.payment_deadline\",\"booking.remainder\"],\"identifier\":\"confirmation_mail\"}}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :post
-    uri: http://dennis:dennis@newsletter.localhost:80/api_mailings/confirmation_mail/deliveries
-    body: delivery[api_mailing_id]=confirmation_mail&delivery[variables][]=booking.number&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.start_date&delivery[variables][]=booking.end_date&delivery[variables][]=booking.nights&delivery[variables][]=booking.persons&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.price_adults&delivery[variables][]=booking.price_children&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.cleaning&delivery[variables][]=booking.boat_training&delivery[variables][]=booking.price_total&delivery[variables][]=booking.house_deposit&delivery[variables][]=booking.boat_deposit&delivery[variables][]=booking.deposit&delivery[variables][]=booking.title&delivery[variables][]=booking.name&delivery[variables][]=booking.address&delivery[variables][]=booking.appnr&delivery[variables][]=booking.postal_code&delivery[variables][]=booking.city&delivery[variables][]=booking.country&delivery[variables][]=booking.phone&delivery[variables][]=booking.email&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.safe_code&delivery[variables][]=booking.villa.phone&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.travelers%5Btraveler%5D&delivery[variables][]=booking.travelers%5Btraveler%5D.traveler.name&delivery[variables][]=booking.discount%3F&delivery[variables][]=booking.late%3F&delivery[variables][]=booking.total_discount&delivery[variables][]=booking.price_total_with_discount&delivery[variables][]=booking.downpayment_deadline&delivery[variables][]=booking.downpayment&delivery[variables][]=booking.payment_deadline&delivery[variables][]=booking.remainder&delivery[booking][city]=test%20city&delivery[booking][address]=test%20street&delivery[booking][name]=&delivery[booking][boat_deposit]=&delivery[booking][house_deposit]=&delivery[booking][start_date]=Tue%20Nov%2030%2011%3A49%3A33%20%2B0100%202010&delivery[booking][number]=&delivery[booking][downpayment_deadline]=&delivery[booking][price_children]=&delivery[booking][persons]=&delivery[booking][price_total_with_discount]=&delivery[booking][country]=&delivery[booking][title]=Herr&delivery[booking][travelers][name]=&delivery[booking][postal_code]=&delivery[booking][cleaning]=&delivery[booking][price_adults]=&delivery[booking][price_total_persons]=&delivery[booking][price_total]=&delivery[booking][boat_training]=&delivery[booking][villa][name]=&delivery[booking][villa][street]=&delivery[booking][villa][phone]=&delivery[booking][villa][safe_code]=&delivery[booking][downpayment]=&delivery[booking][phone]=&delivery[booking][appnr]=&delivery[booking][nights]=&delivery[booking][payment_deadline]=&delivery[booking][total_discount]=&delivery[booking][discount%3F]=&delivery[booking][remainder]=&delivery[booking][late%3F]=&delivery[booking][end_date]=Tue%20Dec%2007%2011%3A49%3A33%20%2B0100%202010&delivery[booking][email]=timo%40moe.digineo.lan&delivery[booking][deposit]=&delivery[recipient]=timo%40moe.digineo.lan
+    uri: http://newsletter.localhost:80/api_mailings/confirmation_mail/deliveries
+    body: delivery[variables][]=booking.number&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.start_date&delivery[variables][]=booking.end_date&delivery[variables][]=booking.nights&delivery[variables][]=booking.persons&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.price_adults&delivery[variables][]=booking.price_children&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.cleaning&delivery[variables][]=booking.boat_training&delivery[variables][]=booking.price_total&delivery[variables][]=booking.house_deposit&delivery[variables][]=booking.boat_deposit&delivery[variables][]=booking.deposit&delivery[variables][]=booking.title&delivery[variables][]=booking.name&delivery[variables][]=booking.address&delivery[variables][]=booking.appnr&delivery[variables][]=booking.postal_code&delivery[variables][]=booking.city&delivery[variables][]=booking.country&delivery[variables][]=booking.phone&delivery[variables][]=booking.email&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.safe_code&delivery[variables][]=booking.villa.phone&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.travelers%5Btraveler%5D&delivery[variables][]=booking.travelers%5Btraveler%5D.traveler.name&delivery[variables][]=booking.discount%3F&delivery[variables][]=booking.late%3F&delivery[variables][]=booking.total_discount&delivery[variables][]=booking.price_total_with_discount&delivery[variables][]=booking.downpayment_deadline&delivery[variables][]=booking.downpayment&delivery[variables][]=booking.payment_deadline&delivery[variables][]=booking.remainder&delivery[api_mailing_id]=confirmation_mail&delivery[booking][city]=test%20city&delivery[booking][address]=test%20street&delivery[booking][name]=&delivery[booking][boat_deposit]=&delivery[booking][house_deposit]=&delivery[booking][start_date]=Tue%20Jan%2004%2017%3A56%3A46%20%2B0100%202011&delivery[booking][number]=&delivery[booking][downpayment_deadline]=&delivery[booking][price_children]=&delivery[booking][persons]=&delivery[booking][price_total_with_discount]=&delivery[booking][country]=&delivery[booking][title]=Herr&delivery[booking][travelers][name]=&delivery[booking][postal_code]=&delivery[booking][cleaning]=&delivery[booking][price_adults]=&delivery[booking][price_total_persons]=&delivery[booking][price_total]=&delivery[booking][boat_training]=&delivery[booking][villa][name]=&delivery[booking][villa][street]=&delivery[booking][villa][phone]=&delivery[booking][villa][safe_code]=&delivery[booking][downpayment]=&delivery[booking][phone]=&delivery[booking][appnr]=&delivery[booking][nights]=&delivery[booking][payment_deadline]=&delivery[booking][total_discount]=&delivery[booking][discount%3F]=&delivery[booking][remainder]=&delivery[booking][late%3F]=&delivery[booking][end_date]=Tue%20Jan%2011%2017%3A56%3A46%20%2B0100%202011&delivery[booking][email]=timo%40moe.digineo.lan&delivery[booking][deposit]=&delivery[recipient]=timo%40moe.digineo.lan
     headers: 
       accept: 
       - application/json
+      x-lettr-api-key: 
+      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       content-type: 
       - application/x-www-form-urlencoded
       accept-encoding: 
@@ -493,13 +519,13 @@
       server: 
       - Apache/2.2.16 (Ubuntu)
       date: 
-      - Tue, 02 Nov 2010 10:49:39 GMT
+      - Tue, 07 Dec 2010 16:56:50 GMT
       x-runtime: 
-      - "263"
+      - "308"
       content-length: 
       - "1"
       set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiViNDY1MWRiNDU2YjE3Y2FjODNjYWY5NGM2NjI4ZDVhMw%3D%3D--23a3ad3fd19cc7eb3c7ee6b718582245077bd3cd; path=/; HttpOnly
+      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVlMzljMjUxMGFkZGQ3ZjY2ZDEwMTQ5NWMzMzMwZDExMw%3D%3D--a3f72695c387531bf514cceca45ad61253d7bde0; path=/; HttpOnly
       cache-control: 
       - no-cache
       status: 
