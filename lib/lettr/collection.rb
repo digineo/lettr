@@ -17,7 +17,11 @@ class Lettr::Collection
         if element.class.respond_to? :is_whitelisted?
           raise SecurityError, "method #{var} in class #{element.class} not whitelisted" unless element.class.is_whitelisted?(var)
         end
-        hash[var] = element.send(var)
+        if element.is_a?( String )
+          hash = element
+        else
+          hash[var] = element.send(var)
+        end
       end
       @context << hash
     end

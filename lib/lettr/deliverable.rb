@@ -30,6 +30,7 @@ module Lettr::Deliverable
     group_variables if respond_to? :group_variables
     handle_options
     append_used_variables if respond_to? :append_used_variables
+    Rails.logger.debug @hash.inspect
 
     # perform delivery request
     rec = Lettr::Delivery.new @hash, @files
