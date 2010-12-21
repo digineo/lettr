@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "lettr"
-  s.version     = "1.0.3"
+  s.version     = "1.0.4"
   s.author      = "Digineo GmbH"
   s.email       = "kontakt@digineo.de"
   s.homepage    = "http://github.com/digineo/lettr"
