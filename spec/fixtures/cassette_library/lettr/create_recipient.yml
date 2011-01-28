@@ -2,80 +2,80 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :post
-    uri: http://newsletter.localhost:80/recipients
-    body: recipient[pcode]=&recipient[lastname]=Mustermann&recipient[city]=test%20city&recipient[email]=test%40example.com&recipient[gender]=m&recipient[street]=&recipient[ccode]=&recipient[approved]=true&recipient[firstname]=Max&recipient[id]=
+    uri: http://lettr.timo.digineo.lan:80/recipients
+    body: recipient[email]=test%40example.com&recipient[id]=&recipient[gender]=m&recipient[firstname]=Max&recipient[lastname]=Mustermann&recipient[street]=&recipient[ccode]=&recipient[pcode]=&recipient[city]=test%20city&recipient[approved]=true
     headers: 
       accept: 
       - application/json
-      x-lettr-api-key: 
-      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
-      content-type: 
-      - application/x-www-form-urlencoded
       accept-encoding: 
       - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
       content-length: 
       - "234"
+      content-type: 
+      - application/x-www-form-urlencoded
   response: !ruby/struct:VCR::Response 
     status: !ruby/struct:VCR::ResponseStatus 
       code: 201
       message: Created
     headers: 
-      location: 
-      - http://newsletter.localhost/recipients/2074
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
-      content-type: 
-      - application/json; charset=utf-8
+      date: 
+      - Fri, 28 Jan 2011 12:52:50 GMT
       server: 
       - Apache/2.2.16 (Ubuntu)
-      date: 
-      - Tue, 07 Dec 2010 16:56:51 GMT
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
       x-runtime: 
-      - "51"
-      content-length: 
-      - "445"
-      set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiUzNmEwYTQxY2E4MWFhNDc4OGEyNWRjMjVhNjUxYzQyNg%3D%3D--9c8c02398796c7337b322b0a31405a97dcd27050; path=/; HttpOnly
+      - "224"
       cache-control: 
       - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlZDM5ZTUwYTY2NDhmZjViYTFjNWE1YTI1ZjdiM2UzN2Q6DHVzZXJfaWRpBg%3D%3D--4fc30c92b9da876ec186ddb23f590d993d31f0fc; path=/; HttpOnly
+      location: 
+      - http://lettr.timo.digineo.lan/recipients/280
+      content-length: 
+      - "449"
       status: 
       - "201"
-    body: "{\"recipient\":{\"pcode\":\"\",\"name\":null,\"city\":\"test city\",\"cached_tag_list\":\"\",\"hard_bounce_count\":0,\"created_at\":\"2010-12-07T17:56:51+01:00\",\"birthdate\":null,\"updated_at\":\"2010-12-07T17:56:51+01:00\",\"import_id\":null,\"soft_bounce_count\":0,\"only_text\":false,\"street\":\"\",\"lastname\":\"Mustermann\",\"id\":2074,\"gender\":\"m\",\"approved\":true,\"user_id\":1,\"firstname\":\"Max\",\"ccode\":null,\"approved_at\":null,\"key\":\"test@example.com\",\"email\":\"test@example.com\"}}"
+      content-type: 
+      - application/json; charset=utf-8
+    body: "{\"recipient\":{\"pcode\":null,\"name\":null,\"city\":\"test city\",\"cached_tag_list\":\"\",\"hard_bounce_count\":0,\"created_at\":\"2011-01-28T13:52:51+01:00\",\"birthdate\":null,\"updated_at\":\"2011-01-28T13:52:51+01:00\",\"import_id\":null,\"soft_bounce_count\":0,\"only_text\":false,\"street\":null,\"lastname\":\"Mustermann\",\"id\":280,\"gender\":\"m\",\"approved\":false,\"user_id\":1,\"firstname\":\"Max\",\"ccode\":\"EE\",\"approved_at\":null,\"key\":\"test@example.com\",\"email\":\"test@example.com\"}}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :delete
-    uri: http://newsletter.localhost:80/recipients/2074
+    uri: http://lettr.timo.digineo.lan:80/recipients/280
     body: 
     headers: 
       accept: 
       - application/json
-      x-lettr-api-key: 
-      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
       accept-encoding: 
       - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
   response: !ruby/struct:VCR::Response 
     status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
     headers: 
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
-      content-type: 
-      - application/json; charset=utf-8
+      date: 
+      - Fri, 28 Jan 2011 12:52:51 GMT
       server: 
       - Apache/2.2.16 (Ubuntu)
-      date: 
-      - Tue, 07 Dec 2010 16:56:51 GMT
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
       x-runtime: 
-      - "110"
-      content-length: 
-      - "1"
-      set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU2Y2IwYTY3YjZjNDQ3ZTVhMjlmMmM3ZTYzMzdlZTVlOQ%3D%3D--42531b2e2afc5965a6027f14ff2a7cef907cb55c; path=/; HttpOnly
+      - "90"
       cache-control: 
       - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlZjZiODkyMjQ2Y2I2ZTkwOTU4ZWRlZDYwY2IxN2EyZTM6DHVzZXJfaWRpBg%3D%3D--5fc1e0f63c17d8acb7f4ff8771c342783c147042; path=/; HttpOnly
+      content-length: 
+      - "1"
       status: 
       - "200"
+      content-type: 
+      - application/json; charset=utf-8
     body: " "
     http_version: "1.1"

@@ -2,119 +2,84 @@
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :post
-    uri: http://newsletter.localhost:80/recipients
-    body: recipient[pcode]=&recipient[lastname]=Mustermann&recipient[city]=test%20city&recipient[email]=test%40example.com&recipient[gender]=m&recipient[street]=&recipient[ccode]=&recipient[approved]=true&recipient[firstname]=Max&recipient[id]=
+    uri: http://lettr.timo.digineo.lan:80/recipients
+    body: recipient[email]=test%40example.com&recipient[id]=&recipient[gender]=m&recipient[firstname]=Max&recipient[lastname]=Mustermann&recipient[street]=&recipient[ccode]=&recipient[pcode]=&recipient[city]=test%20city&recipient[approved]=true
     headers: 
       accept: 
       - application/json
-      x-lettr-api-key: 
-      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
-      content-type: 
-      - application/x-www-form-urlencoded
       accept-encoding: 
       - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
       content-length: 
       - "234"
+      content-type: 
+      - application/x-www-form-urlencoded
   response: !ruby/struct:VCR::Response 
     status: !ruby/struct:VCR::ResponseStatus 
       code: 201
       message: Created
     headers: 
-      location: 
-      - http://newsletter.localhost/recipients/2073
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
-      content-type: 
-      - application/json; charset=utf-8
+      date: 
+      - Fri, 28 Jan 2011 12:52:49 GMT
       server: 
       - Apache/2.2.16 (Ubuntu)
-      date: 
-      - Tue, 07 Dec 2010 16:56:50 GMT
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
       x-runtime: 
-      - "54"
-      content-length: 
-      - "445"
-      set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiU5MTJkODkyMDVhMzBjODA4YmJhYjIyOWYxNTdhZGEyNw%3D%3D--2a27602bbd0549f35d38fa2916044b02ef73211e; path=/; HttpOnly
+      - "202"
       cache-control: 
       - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlMDYxYWVhZjllYzEyNmI3YmY2NzY2ZTQ0YmQzMzg4Njc6DHVzZXJfaWRpBg%3D%3D--49d2d8819ee6c726403bc79c5f1a73220151de49; path=/; HttpOnly
+      location: 
+      - http://lettr.timo.digineo.lan/recipients/279
+      content-length: 
+      - "449"
       status: 
       - "201"
-    body: "{\"recipient\":{\"pcode\":\"\",\"name\":null,\"city\":\"test city\",\"cached_tag_list\":\"\",\"hard_bounce_count\":0,\"created_at\":\"2010-12-07T17:56:51+01:00\",\"birthdate\":null,\"updated_at\":\"2010-12-07T17:56:51+01:00\",\"import_id\":null,\"soft_bounce_count\":0,\"only_text\":false,\"street\":\"\",\"lastname\":\"Mustermann\",\"id\":2073,\"gender\":\"m\",\"approved\":true,\"user_id\":1,\"firstname\":\"Max\",\"ccode\":null,\"approved_at\":null,\"key\":\"test@example.com\",\"email\":\"test@example.com\"}}"
+      content-type: 
+      - application/json; charset=utf-8
+    body: "{\"recipient\":{\"pcode\":null,\"name\":null,\"city\":\"test city\",\"cached_tag_list\":\"\",\"hard_bounce_count\":0,\"created_at\":\"2011-01-28T13:52:50+01:00\",\"birthdate\":null,\"updated_at\":\"2011-01-28T13:52:50+01:00\",\"import_id\":null,\"soft_bounce_count\":0,\"only_text\":false,\"street\":null,\"lastname\":\"Mustermann\",\"id\":279,\"gender\":\"m\",\"approved\":false,\"user_id\":1,\"firstname\":\"Max\",\"ccode\":\"EE\",\"approved_at\":null,\"key\":\"test@example.com\",\"email\":\"test@example.com\"}}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
-    method: :delete
-    uri: http://newsletter.localhost:80/recipients/destroy_by_email
-    body: 
+    method: :post
+    uri: http://lettr.timo.digineo.lan:80/recipients/destroy_by_email
+    body: _method=delete&email=test%40example.com
     headers: 
       accept: 
       - "*/*; q=0.5, application/xml"
       accept-encoding: 
       - gzip, deflate
-      email: 
-      - test@example.com
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 401
-      message: Authorization Required
-    headers: 
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
-      content-type: 
-      - application/xml; charset=utf-8
-      www-authenticate: 
-      - Basic realm="Web Password"
-      server: 
-      - Apache/2.2.16 (Ubuntu)
-      date: 
-      - Tue, 07 Dec 2010 16:56:51 GMT
-      x-runtime: 
-      - "1"
-      content-length: 
-      - "27"
-      cache-control: 
-      - no-cache
-      status: 
-      - "401"
-    body: |
-      HTTP Basic: Access denied.
-
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :delete
-    uri: http://newsletter.localhost:80/recipients/2073
-    body: 
-    headers: 
-      accept: 
-      - application/json
       x-lettr-api-key: 
-      - 377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97
-      accept-encoding: 
-      - gzip, deflate
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+      content-length: 
+      - "39"
+      content-type: 
+      - application/x-www-form-urlencoded
   response: !ruby/struct:VCR::Response 
     status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
     headers: 
-      x-powered-by: 
-      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
-      content-type: 
-      - application/json; charset=utf-8
+      date: 
+      - Fri, 28 Jan 2011 12:52:50 GMT
       server: 
       - Apache/2.2.16 (Ubuntu)
-      date: 
-      - Tue, 07 Dec 2010 16:56:51 GMT
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
       x-runtime: 
-      - "76"
-      content-length: 
-      - "1"
-      set-cookie: 
-      - _newsletter_session=BAh7BzoMdXNlcl9pZGkGOg9zZXNzaW9uX2lkIiVlZTljODZmZmQ2N2VmZGEzNGMyOGM1NjgwMmJjMTdlYQ%3D%3D--7e951a62cfd16e44eb71ea0d1f4536da3d7b74d9; path=/; HttpOnly
+      - "293"
       cache-control: 
       - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlMjM1OTg5YmJlNjhiMzM5YmQ3Zjk0ZjllZDIwOWQ1N2Q6DHVzZXJfaWRpBg%3D%3D--171d59b28af16cede6f2a5c7285def8437614a96; path=/; HttpOnly
+      content-length: 
+      - "1"
       status: 
       - "200"
+      content-type: 
+      - application/json; charset=utf-8
     body: " "
     http_version: "1.1"

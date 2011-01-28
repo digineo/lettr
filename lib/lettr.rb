@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'active_support'
 
 module Lettr
@@ -83,6 +84,9 @@ module Lettr
   end
 
   def self.method_missing *args, &block
+    if args.first.to_s =~ /^to_/
+      super
+    end
     load_api_mailing_or_fail_loud *args
   rescue RestClient::ResourceNotFound
     super

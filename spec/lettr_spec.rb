@@ -4,17 +4,17 @@ describe Lettr do
 
   before do
     Lettr.protocol = 'http'
-    Lettr.host = 'newsletter.localhost'
+    Lettr.host = 'lettr.timo.digineo.lan'
     #Lettr.credentials = { :user => 'dennis', :pass => 'dennis' }
-    Lettr.api_key = "377d9f4e34d21a8c557eae6cabaf3ad1b90e1e97"
+    Lettr.api_key = "4674c52e7a12bae3777d02f82b79b7ddcc63994c"
   end
 
   it 'should set the host' do
-    Lettr.host.should eql 'newsletter.localhost'
+    Lettr.host.should eql 'lettr.timo.digineo.lan'
   end
 
   it 'should set the site' do
-    Lettr::Base.site_url.should eql 'http://newsletter.localhost/'
+    Lettr::Base.site_url.should eql 'http://lettr.timo.digineo.lan/'
   end
 
   describe 'creating a recipient' do
@@ -50,7 +50,7 @@ describe Lettr do
     end
 
     after do
-      @recipient.destroy if @recipient
+      #@recipient.destroy if @recipient
     end
 
     it 'should delete recipients by email' do

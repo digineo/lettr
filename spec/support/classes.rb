@@ -28,7 +28,7 @@ class Booking < OpenStruct
 
   lettr_white_list :number, :start_date, :end_date, :nights, :persons, :price_total_persons, :price_adults, :price_children, :cleaning, :boat_training, :price_total, :house_deposit, :boat_deposit,
     :deposit, :title, :name, :address, :appnr, :postal_code, :city, :country, :phone, :email, :total_discount, :price_total_with_discount, :downpayment_deadline, :downpayment, :payment_deadline,
-    :remainder, :discount?, :late?, :salutation, :edit_url
+    :remainder, :discount?, :late?, :salutation, :edit_url, :price_total_with_deposit
 
   DEFAULTS = {
     :title => 'Herr',
@@ -43,7 +43,7 @@ class Booking < OpenStruct
     :adults => 2,
     :state => 'offer',
     :villa => Villa.new,
-    :travelers => (1..5).to_s.map { |n| Traveler.new }
+    :travelers => (1..5).to_a.map { |n| Traveler.new }
   }
 
   attr_reader :attributes
@@ -59,6 +59,10 @@ class Booking < OpenStruct
 
   def lastname
     last_name
+  end
+
+  def traveler_names
+    ['foo', 'bar']
   end
 
 end

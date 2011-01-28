@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Lettr::Deliverable
 
   def self.included base
@@ -30,7 +31,7 @@ module Lettr::Deliverable
     group_variables if respond_to? :group_variables
     handle_options
     append_used_variables if respond_to? :append_used_variables
-    Rails.logger.debug @hash.inspect
+    Rails.logger.debug @hash.inspect if defined? Rails
 
     # perform delivery request
     rec = Lettr::Delivery.new @hash, @files
