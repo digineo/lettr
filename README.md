@@ -13,8 +13,6 @@ For Rails 3.x or if you use Bundler drop the following line into your Gemfile:
 
     gem 'lettr'
 
-NOTE: In a Rails 3 Application you currently cant use Delivery Method nor Lettr::Mailer.
-
 ## Configuration
 There are some configuration options you can provide either inside config/environment.rb or config/environments/$RAILS_ENV.rb or create an initializer in config/initializers.
 At least you have to provide your lettr login credentials:
