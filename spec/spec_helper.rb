@@ -4,7 +4,10 @@ ENV["RAILS_ENV"] ||= 'test'
 #require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environment'))
 require 'rubygems'
 require 'spec/autorun'
+require 'action_mailer'
+
 require File.join(File.dirname(__FILE__), '..', 'lib', 'lettr.rb')
+require File.join(File.dirname(__FILE__), '..', 'init.rb')
 #require 'spec/rails'
 #require 'paperclip/matchers'
 

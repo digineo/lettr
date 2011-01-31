@@ -13,6 +13,9 @@ module Lettr
   require 'lettr/collection'
   require 'lettr/rendered_mailing'
   require 'lettr/whitelist'
+  require 'lettr/action_mailer'
+  require 'lettr/mailer'
+  require 'lettr/mail_extensions'
 
   mattr_accessor :host
   mattr_accessor :attributes

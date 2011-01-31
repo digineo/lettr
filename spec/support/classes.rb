@@ -1,3 +1,9 @@
+begin
+  require 'active_support/time'
+rescue LoadError
+  # not as 3
+end
+
 class Villa < OpenStruct
   extend Lettr::Whitelist
 
