@@ -1,5 +1,10 @@
 require 'spec_helper'
 
+# simulate railtie initialization
+unless defined? TMail
+  ActionMailer::Base.add_delivery_method :lettr, Lettr::MailExtensions::Lettr
+end
+
 class TestMailer < ActionMailer::Base
   def testmail
 

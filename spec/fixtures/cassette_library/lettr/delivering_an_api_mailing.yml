@@ -1,0 +1,537 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/pre_rendered_mail
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:24 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlYjFkMTM2YjhiNmU4OTk2OGUxYTMwNjZmMmM2ZjFmN2U6DHVzZXJfaWRpBg%3D%3D--3270ca4167e13fd340f81669f30a625f92453f1b; path=/; HttpOnly
+      status: 
+      - "404"
+      vary: 
+      - Accept-Encoding
+      content-encoding: 
+      - gzip
+      content-length: 
+      - "2156"
+      content-type: 
+      - text/html; charset=utf-8
+    body: !binary |
+      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
+      lgvBTpCSEy/TqSyOv4d64hLyc1XPuZgS7lpzSBM0m1Npc0dgleZJoWx+qtqc
+      fyWFjKo0TkgWl1T68N4+BpdnHBFIlUbxHjCXgbvgRiLzS1oMDbgCltE73TC6
+      7rWbIylhGeZC5EfEEXH4aFK0vUpCNj9BwzB3llk5Z8udARTjcgdx0+C615cv
+      ZwiOjMWZxrXgrXOPiA92stwyBv3r8rYGSEV4Jl5AlR/NKH5TRlmvMqhJFuVc
+      Lm9PwNhMGIyb0e6O4DpW+B4U3ZJUcuu5SvKiUHxVL5Bg4G+AND1Pg/6wFjBu
+      AaQkI/PSHdWNSLbBYmxmfTy4nyAoaVCYoLdFjoWEPeoxQ+wew/TfpWHK+2Ne
+      Ux0fGkoV7GuBssdBvYYctAOlmqx1ppddezSX/0+prpFUl1CewxcVSZbr7Wbr
+      +7YDMhoOn7pnt/zkXpOkW92rmxI5Z1lbi3yEen5+1wo/udJ74iXd0D6lZRr+
+      1/Au1BCHE28ajtydvF+++bUQesxi937zzVyP3cedp764w787YOXDW0Dwi57J
+      UdIvOC7S/NFnYjx8JMYviViisicyPc2TMSyA9f3L23J37mA2NzC3QjNcZNP7
+      zXlMp8XcgQjb7bYxrBtUad6vmFblIlN027Y/ULNr32NY8xAeGH378yqnOyZ2
+      /y/OUHmuYZXb5WN7dk7ORNvSznvcAIA997ggwKRTHv4BWhGXYEdKAAA=
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://lettr.timo.digineo.lan:80/rendered_mailings/pre_rendered_mail
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:24 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlNzNkOWVjZTZjOGZiNDY4YmI1ODZjNTc1ZTA0NWJlYjk6DHVzZXJfaWRpBg%3D%3D--b0730d1d2098154374c149b7e19c00196be01753; path=/; HttpOnly
+      status: 
+      - "404"
+      vary: 
+      - Accept-Encoding
+      content-encoding: 
+      - gzip
+      content-length: 
+      - "2085"
+      content-type: 
+      - text/html; charset=utf-8
+    body: !binary |
+      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
+      AExlxqI/ARCv4wmaQwAA
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://lettr.timo.digineo.lan:80/rendered_mailings
+    body: rendered_mailing[identifier]=pre_rendered_mail&rendered_mailing[subject]=test%20subject
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+      content-length: 
+      - "87"
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:24 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      x-runtime: 
+      - "194"
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlYzg2MmJlZWE2ZWVkMDFiZTMwNjhlZTQ0M2U1MGJkNTc6DHVzZXJfaWRpBg%3D%3D--3f6e1022a826a838f53e40f293f9902cd2482944; path=/; HttpOnly
+      location: 
+      - http://lettr.timo.digineo.lan/rendered_mailings/pre_rendered_mail
+      content-length: 
+      - "512"
+      status: 
+      - "201"
+      content-type: 
+      - application/json; charset=utf-8
+    body: "{\"rendered_mailing\":{\"html\":null,\"created_at\":\"2011-02-01T12:31:25+01:00\",\"search_filter_id\":null,\"updated_at\":\"2011-02-01T12:31:25+01:00\",\"premium\":true,\"mailing_template_id\":null,\"linktracking_disabled\":false,\"deliver_on\":null,\"text\":null,\"salutation_id\":1,\"only_text\":false,\"template_html\":null,\"subject\":\"test subject\",\"id\":59,\"user_id\":1,\"sender_address_id\":null,\"template_text\":null,\"sync_html2text\":true,\"identifier\":\"pre_rendered_mail\",\"tracking_image\":true,\"state\":\"active\",\"recurrent_mailing_id\":null}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/pre_rendered_mail/deliveries
+    body: delivery[recipient]=timo%40moe.digineo.lan&delivery[api_mailing_id]=pre_rendered_mail&delivery[identifier]=pre_rendered_mail&delivery[subject]=test%20subject&delivery[html]=%3Cdiv%3Etest%20html%3C%2Fdiv%3E&delivery[text]=test%20text
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+      content-length: 
+      - "232"
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:25 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      x-runtime: 
+      - "165"
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlYmM2NWY1YmRkNzNiNTVmNTRkYWE3NDI5NjdhNDg4ZjI6DHVzZXJfaWRpBg%3D%3D--a000fd1769495310ed58c4cc0813b0c60cd101bc; path=/; HttpOnly
+      content-length: 
+      - "1"
+      status: 
+      - "201"
+      content-type: 
+      - application/json; charset=utf-8
+    body: " "
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :delete
+    uri: http://lettr.timo.digineo.lan:80/rendered_mailings/pre_rendered_mail
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:25 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      x-runtime: 
+      - "182"
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlMzA4ZmI5ZDJiYzcyMDIwNDk5MjMyY2RmODA1NmM0YTM6DHVzZXJfaWRpBg%3D%3D--8d6c522b3853e47b328cb4bf64175d1fbcf849d4; path=/; HttpOnly
+      content-length: 
+      - "1"
+      status: 
+      - "200"
+      content-type: 
+      - application/json; charset=utf-8
+    body: " "
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/reminder_mail
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:26 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      etag: 
+      - "\"0c33a293b832b048142417dfa33855de\""
+      x-runtime: 
+      - "47"
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlNzYwYmU0NjA0ZGFkYzFjODU1ZDc0YWNiNDg4ZWExY2I6DHVzZXJfaWRpBg%3D%3D--7699597e835ef1ba43b7b9355c9d5297d7ad27f6; path=/; HttpOnly
+      content-length: 
+      - "102"
+      status: 
+      - "200"
+      content-type: 
+      - application/json; charset=utf-8
+    body: "{\"api_mailing\":{\"variables\":[\"booking.number\"],\"subject\":\"test subject\",\"identifier\":\"reminder_mail\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/reminder_mail/deliveries
+    body: delivery[recipient]=timo%40moe.digineo.lan&delivery[api_mailing_id]=reminder_mail&delivery[booking][number]=&delivery[variables][]=booking.number
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+      content-length: 
+      - "145"
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:26 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      x-runtime: 
+      - "273"
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlYTcxNWM1ZTVjMGI2OTk1MzcyMzRmMDNmNTA4MDViODg6DHVzZXJfaWRpBg%3D%3D--4508c6843c35e22169072e7cd4ec7e1e0fe863cb; path=/; HttpOnly
+      content-length: 
+      - "1"
+      status: 
+      - "201"
+      content-type: 
+      - application/json; charset=utf-8
+    body: " "
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/confirmation_mail
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:26 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      etag: 
+      - "\"184c37a60924acf6d7f811aed9425514\""
+      x-runtime: 
+      - "49"
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlOWYyNDU0NjFhZDI1MTI0MzZiYTMyOTExZGViNzNiOTA6DHVzZXJfaWRpBg%3D%3D--c8fef5cf46ae9d193100b2944f4df451a518b11e; path=/; HttpOnly
+      content-length: 
+      - "1078"
+      status: 
+      - "200"
+      content-type: 
+      - application/json; charset=utf-8
+    body: "{\"api_mailing\":{\"variables\":[\"booking.number\",\"booking.villa.name\",\"booking.start_date\",\"booking.end_date\",\"booking.nights\",\"booking.persons\",\"booking.price_total_persons\",\"booking.price_adults\",\"booking.price_children\",\"booking.price_total_persons\",\"booking.cleaning\",\"booking.boat_training\",\"booking.price_total\",\"booking.house_deposit\",\"booking.boat_deposit\",\"booking.deposit\",\"booking.title\",\"booking.name\",\"booking.address\",\"booking.appnr\",\"booking.postal_code\",\"booking.city\",\"booking.country\",\"booking.phone\",\"booking.email\",\"booking.villa.name\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.safe_code\",\"booking.villa.phone\",\"booking.villa.name\",\"booking.traveler_names[traveler]\",\"booking.traveler_names[traveler].traveler\",\"booking.discount?\",\"booking.late?\",\"booking.late?\",\"booking.total_discount\",\"booking.price_total_with_discount\",\"booking.price_total_with_deposit\",\"booking.downpayment_deadline\",\"booking.downpayment\",\"booking.payment_deadline\",\"booking.remainder\"],\"subject\":\"Confirmation\",\"identifier\":\"confirmation_mail\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/confirmation_mail/deliveries
+    body: delivery[recipient]=timo%40moe.digineo.lan&delivery[api_mailing_id]=confirmation_mail&delivery[booking][villa][name]=&delivery[booking][villa][street]=&delivery[booking][villa][safe_code]=&delivery[booking][villa][phone]=&delivery[booking][start_date]=2011-03-01%2012%3A31%3A23%20%2B0100&delivery[booking][end_date]=2011-03-08%2012%3A31%3A23%20%2B0100&delivery[booking][nights]=&delivery[booking][persons]=&delivery[booking][price_total_persons]=&delivery[booking][price_adults]=&delivery[booking][price_children]=&delivery[booking][cleaning]=&delivery[booking][boat_training]=&delivery[booking][price_total]=&delivery[booking][house_deposit]=&delivery[booking][boat_deposit]=&delivery[booking][deposit]=&delivery[booking][title]=Herr&delivery[booking][name]=&delivery[booking][address]=test%20street&delivery[booking][appnr]=&delivery[booking][postal_code]=&delivery[booking][city]=test%20city&delivery[booking][country]=&delivery[booking][phone]=&delivery[booking][email]=timo%40moe.digineo.lan&delivery[booking][traveler_names][]=foo&delivery[booking][traveler_names][]=bar&delivery[booking][discount%3F]=&delivery[booking][late%3F]=&delivery[booking][total_discount]=&delivery[booking][price_total_with_discount]=&delivery[booking][price_total_with_deposit]=&delivery[booking][downpayment_deadline]=&delivery[booking][downpayment]=&delivery[booking][payment_deadline]=&delivery[booking][remainder]=&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.start_date&delivery[variables][]=booking.end_date&delivery[variables][]=booking.nights&delivery[variables][]=booking.persons&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.price_adults&delivery[variables][]=booking.price_children&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.cleaning&delivery[variables][]=booking.boat_training&delivery[variables][]=booking.price_total&delivery[variables][]=booking.house_deposit&delivery[variables][]=booking.boat_deposit&delivery[variables][]=booking.deposit&delivery[variables][]=booking.title&delivery[variables][]=booking.name&delivery[variables][]=booking.address&delivery[variables][]=booking.appnr&delivery[variables][]=booking.postal_code&delivery[variables][]=booking.city&delivery[variables][]=booking.country&delivery[variables][]=booking.phone&delivery[variables][]=booking.email&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.safe_code&delivery[variables][]=booking.villa.phone&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.traveler_names%5Btraveler%5D&delivery[variables][]=booking.traveler_names%5Btraveler%5D.traveler&delivery[variables][]=booking.discount%3F&delivery[variables][]=booking.late%3F&delivery[variables][]=booking.late%3F&delivery[variables][]=booking.total_discount&delivery[variables][]=booking.price_total_with_discount&delivery[variables][]=booking.price_total_with_deposit&delivery[variables][]=booking.downpayment_deadline&delivery[variables][]=booking.downpayment&delivery[variables][]=booking.payment_deadline&delivery[variables][]=booking.remainder
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+      content-length: 
+      - "3248"
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 422
+      message: Unprocessable Entity
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:27 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      x-runtime: 
+      - "173"
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlZTAyN2JmYTg2M2FlZGIwNTAwZTc1ZTE4MmNmYzY1NzI6DHVzZXJfaWRpBg%3D%3D--7fc0d072b2235cdabdf01108a23993541bb66313; path=/; HttpOnly
+      content-length: 
+      - "49"
+      status: 
+      - "422"
+      content-type: 
+      - application/json; charset=utf-8
+    body: "[[\"variables\",\"Missing variable booking.number\"]]"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/confirmation_mail
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:27 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      etag: 
+      - "\"184c37a60924acf6d7f811aed9425514\""
+      x-runtime: 
+      - "56"
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlMzc5OWY2NTRkOWZiMWVhYWE0YjdjZjI2OTI0ZjU0Yjk6DHVzZXJfaWRpBg%3D%3D--3e27a6b23a9f5a28cd1ae8851d7b5126e32a26d4; path=/; HttpOnly
+      content-length: 
+      - "1078"
+      status: 
+      - "200"
+      content-type: 
+      - application/json; charset=utf-8
+    body: "{\"api_mailing\":{\"variables\":[\"booking.number\",\"booking.villa.name\",\"booking.start_date\",\"booking.end_date\",\"booking.nights\",\"booking.persons\",\"booking.price_total_persons\",\"booking.price_adults\",\"booking.price_children\",\"booking.price_total_persons\",\"booking.cleaning\",\"booking.boat_training\",\"booking.price_total\",\"booking.house_deposit\",\"booking.boat_deposit\",\"booking.deposit\",\"booking.title\",\"booking.name\",\"booking.address\",\"booking.appnr\",\"booking.postal_code\",\"booking.city\",\"booking.country\",\"booking.phone\",\"booking.email\",\"booking.villa.name\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.street\",\"booking.villa.safe_code\",\"booking.villa.phone\",\"booking.villa.name\",\"booking.traveler_names[traveler]\",\"booking.traveler_names[traveler].traveler\",\"booking.discount?\",\"booking.late?\",\"booking.late?\",\"booking.total_discount\",\"booking.price_total_with_discount\",\"booking.price_total_with_deposit\",\"booking.downpayment_deadline\",\"booking.downpayment\",\"booking.payment_deadline\",\"booking.remainder\"],\"subject\":\"Confirmation\",\"identifier\":\"confirmation_mail\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/confirmation_mail/deliveries
+    body: delivery[recipient]=timo%40moe.digineo.lan&delivery[api_mailing_id]=confirmation_mail&delivery[booking][number]=&delivery[booking][villa][name]=&delivery[booking][villa][street]=&delivery[booking][villa][safe_code]=&delivery[booking][villa][phone]=&delivery[booking][start_date]=2011-03-01%2012%3A31%3A23%20%2B0100&delivery[booking][end_date]=2011-03-08%2012%3A31%3A23%20%2B0100&delivery[booking][nights]=&delivery[booking][persons]=&delivery[booking][price_total_persons]=&delivery[booking][price_adults]=&delivery[booking][price_children]=&delivery[booking][cleaning]=&delivery[booking][boat_training]=&delivery[booking][price_total]=&delivery[booking][house_deposit]=&delivery[booking][boat_deposit]=&delivery[booking][deposit]=&delivery[booking][title]=Herr&delivery[booking][name]=&delivery[booking][address]=test%20street&delivery[booking][appnr]=&delivery[booking][postal_code]=&delivery[booking][city]=test%20city&delivery[booking][country]=&delivery[booking][phone]=&delivery[booking][email]=timo%40moe.digineo.lan&delivery[booking][traveler_names][]=foo&delivery[booking][traveler_names][]=bar&delivery[booking][discount%3F]=&delivery[booking][late%3F]=&delivery[booking][total_discount]=&delivery[booking][price_total_with_discount]=&delivery[booking][price_total_with_deposit]=&delivery[booking][downpayment_deadline]=&delivery[booking][downpayment]=&delivery[booking][payment_deadline]=&delivery[booking][remainder]=&delivery[variables][]=booking.number&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.start_date&delivery[variables][]=booking.end_date&delivery[variables][]=booking.nights&delivery[variables][]=booking.persons&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.price_adults&delivery[variables][]=booking.price_children&delivery[variables][]=booking.price_total_persons&delivery[variables][]=booking.cleaning&delivery[variables][]=booking.boat_training&delivery[variables][]=booking.price_total&delivery[variables][]=booking.house_deposit&delivery[variables][]=booking.boat_deposit&delivery[variables][]=booking.deposit&delivery[variables][]=booking.title&delivery[variables][]=booking.name&delivery[variables][]=booking.address&delivery[variables][]=booking.appnr&delivery[variables][]=booking.postal_code&delivery[variables][]=booking.city&delivery[variables][]=booking.country&delivery[variables][]=booking.phone&delivery[variables][]=booking.email&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.street&delivery[variables][]=booking.villa.safe_code&delivery[variables][]=booking.villa.phone&delivery[variables][]=booking.villa.name&delivery[variables][]=booking.traveler_names%5Btraveler%5D&delivery[variables][]=booking.traveler_names%5Btraveler%5D.traveler&delivery[variables][]=booking.discount%3F&delivery[variables][]=booking.late%3F&delivery[variables][]=booking.late%3F&delivery[variables][]=booking.total_discount&delivery[variables][]=booking.price_total_with_discount&delivery[variables][]=booking.price_total_with_deposit&delivery[variables][]=booking.downpayment_deadline&delivery[variables][]=booking.downpayment&delivery[variables][]=booking.payment_deadline&delivery[variables][]=booking.remainder
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+      content-length: 
+      - "3312"
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:27 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      x-runtime: 
+      - "535"
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlMmEwZDgwMWZlY2JiZTY3OGIyYjBlZjkwNjRmMTZiM2U6DHVzZXJfaWRpBg%3D%3D--a1d655cc8419ce22ad7223a74f044ee3dde4233b; path=/; HttpOnly
+      content-length: 
+      - "1"
+      status: 
+      - "201"
+      content-type: 
+      - application/json; charset=utf-8
+    body: " "
+    http_version: "1.1"

@@ -22,7 +22,6 @@ describe 'delivery method :lettr' do
   end
 
   it 'should deliver a mail via lettr' do
-    LettrTestMailer.deliver_testmail
     expect { LettrTestMailer.deliver_testmail }.to_not raise_error
   end
 end

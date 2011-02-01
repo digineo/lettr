@@ -1,0 +1,169 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/test_lettr_mailer
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:32 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlMWJmZDUzN2U4MGI4YzZiNjJhZjhlZjY0ODMwMzBmYmU6DHVzZXJfaWRpBg%3D%3D--ca644b8615e862a8e0e556f404abfa46bfebddb9; path=/; HttpOnly
+      status: 
+      - "404"
+      vary: 
+      - Accept-Encoding
+      content-encoding: 
+      - gzip
+      content-length: 
+      - "2154"
+      content-type: 
+      - text/html; charset=utf-8
+    body: !binary |
+      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
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://lettr.timo.digineo.lan:80/rendered_mailings/test_lettr_mailer
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:33 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      etag: 
+      - "\"e9dc76e745344dd037c132939beba47b\""
+      x-runtime: 
+      - "33"
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlN2M3MjExMThlMGIzMTNmNmUzNGU5MTYzNjM0MGVhMTQ6DHVzZXJfaWRpBg%3D%3D--e3a2d74a460177c2806920be0af0141b10dafa53; path=/; HttpOnly
+      content-length: 
+      - "514"
+      status: 
+      - "200"
+      content-type: 
+      - application/json; charset=utf-8
+    body: "{\"rendered_mailing\":{\"html\":null,\"created_at\":\"2011-02-01T12:29:24+01:00\",\"search_filter_id\":null,\"updated_at\":\"2011-02-01T12:29:24+01:00\",\"premium\":true,\"mailing_template_id\":null,\"linktracking_disabled\":false,\"deliver_on\":null,\"text\":null,\"salutation_id\":1,\"only_text\":false,\"template_html\":null,\"subject\":\"test lettr mailer\",\"id\":53,\"user_id\":1,\"sender_address_id\":1,\"template_text\":null,\"sync_html2text\":true,\"identifier\":\"test_lettr_mailer\",\"tracking_image\":true,\"state\":\"active\",\"recurrent_mailing_id\":null}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://lettr.timo.digineo.lan:80/api_mailings/test_lettr_mailer/deliveries
+    body: delivery[recipient]=test%40example.com&delivery[api_mailing_id]=test_lettr_mailer&delivery[identifier]=test_lettr_mailer&delivery[subject]=test%20lettr%20mailer&delivery[html]=&delivery[text]=test%20lettr%20mailer%20body
+    headers: 
+      accept: 
+      - application/json
+      accept-encoding: 
+      - gzip, deflate
+      x-lettr-api-key: 
+      - 4674c52e7a12bae3777d02f82b79b7ddcc63994c
+      content-length: 
+      - "220"
+      content-type: 
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      date: 
+      - Tue, 01 Feb 2011 11:31:33 GMT
+      server: 
+      - Apache/2.2.16 (Ubuntu)
+      x-powered-by: 
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.1
+      x-runtime: 
+      - "305"
+      cache-control: 
+      - no-cache
+      set-cookie: 
+      - _newsletter_session=BAh7BzoPc2Vzc2lvbl9pZCIlM2NmMWM3ZjE4NjE5M2NmMjQzZTBmMmU5MjAzMjRjYmQ6DHVzZXJfaWRpBg%3D%3D--ce0cc7bdf672eeb3ac15681725b2d6924b8610ff; path=/; HttpOnly
+      content-length: 
+      - "1"
+      status: 
+      - "201"
+      content-type: 
+      - application/json; charset=utf-8
+    body: " "
+    http_version: "1.1"

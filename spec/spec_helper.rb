@@ -11,6 +11,9 @@ require File.join(File.dirname(__FILE__), '..', 'init.rb')
 #require 'spec/rails'
 #require 'paperclip/matchers'
 
+require 'logger'
+RestClient.log = Logger.new(STDOUT)
+
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'
 

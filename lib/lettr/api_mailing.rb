@@ -1,4 +1,4 @@
-Lettr::ApiMailing = Struct.new(:identifier, :subject, :variables) do
+class Lettr::ApiMailing < Struct.new(:identifier, :subject, :variables)
   include Lettr::Resource
   include Lettr::ObjectConverter
   include Lettr::Deliverable
