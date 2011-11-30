@@ -15,6 +15,7 @@ class Lettr::ApiMailing < Struct.new(:identifier, :subject, :variables)
 
   def delivery_options= options
     @recipient = options.delete(:recipient)
+    @reply_to = options.delete(:reply_to)
     @delivery_options = options
     @delivery_options.stringify_keys!
   end

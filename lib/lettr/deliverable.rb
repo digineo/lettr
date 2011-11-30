@@ -4,6 +4,7 @@ module Lettr::Deliverable
   def self.included base
     base.class_eval do
       attr_accessor :recipient
+      attr_accessor :reply_to
     end
   end
 
@@ -42,6 +43,7 @@ module Lettr::Deliverable
     @hash = {}
     @files = {}
     @hash[ :recipient ] = recipient
+    @hash[ :reply_to ] = reply_to
     @hash[ :api_mailing_id ] = identifier
   end
 
