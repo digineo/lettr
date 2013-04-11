@@ -1,7 +1,12 @@
 module Lettr::Whitelist
 
   def self.extended model
-    model.class_inheritable_accessor :lettr_whitelist
+    if model.respond_to? :class_attribute
+      # Rails >= 3.0
+      model.class_attribute :lettr_whitelist
+    else
+      model.class_inheritable_accessor :lettr_whitelist
+    end
     model.lettr_whitelist ||= []
   end
 
